@@ -1,0 +1,70 @@
+\documentclass[a4paper,twocolumn,8pt]{extarticle}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{extsizes}
+\usepackage[a4paper,top=0.5cm,bottom=1.0cm,left=1.0cm,right=0.5cm,nomarginpar,foot=0.3cm,includehead]{geometry}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{1,1,1}
+
+\lstdefinestyle{mystyle}{
+    language=C++,
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{
+    style=mystyle,
+    extendedchars=\true,
+%    literate=
+%        {б}{{\selectfont\char225}}1
+%        {в}{{\selectfont\char226}}1
+%        {г}{{\selectfont\char227}}1
+}
+\setlength{\columnseprule}{0.4pt}
+\setlength{\columnsep}{30pt}
+
+\begin{document}
+    \pagestyle{fancy}
+    \fancyhead[LO]{St. Petersburg State University (Ushakov, Turevskii, Danilevich)}
+    \fancyhead[R]{Page \thepage~of~\pageref{LastPage}}
+    \tableofcontents
+    \newpage
+    \section{Теория чисел}
+    \input{chinese-remainder-theorem.tex}
+    \input{miller-rabin.tex}
+
+    \section{Графы}
+    \input{2SAT.tex}
+    \input{euler}
+
+    \section{\texttt{xor}, \texttt{and}, \texttt{or}-свёртки}
+    \input{convolutions}
+
+    \section{Структуры данных}
+    \input{fenwick}
+    \input{ordered-set}
+\end{document}

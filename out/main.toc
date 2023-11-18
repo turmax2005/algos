@@ -1,0 +1,14 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Теория чисел}{1}{}%
+\contentsline {subsection}{\numberline {1.1}КТО}{1}{}%
+\contentsline {subsection}{\numberline {1.2}Алгоритм Миллера --- Рабина}{1}{}%
+\contentsline {section}{\numberline {2}Графы}{1}{}%
+\contentsline {subsection}{\numberline {2.1}2-$\mathcal {SAT}$}{1}{}%
+\contentsline {subsection}{\numberline {2.2}Эйлеров цикл}{2}{}%
+\contentsline {section}{\numberline {3}\texttt {xor}, \texttt {and}, \texttt {or}-свёртки}{2}{}%
+\contentsline {subsection}{\numberline {3.1}\texttt {and}-свёртка}{2}{}%
+\contentsline {subsection}{\numberline {3.2}\texttt {or}-свёртка}{2}{}%
+\contentsline {subsection}{\numberline {3.3}\texttt {xor}-свёртка}{2}{}%
+\contentsline {section}{\numberline {4}Структуры данных}{2}{}%
+\contentsline {subsection}{\numberline {4.1}Дерево Фенвика}{2}{}%
+\contentsline {subsection}{\numberline {4.2}Ordered set}{2}{}%
