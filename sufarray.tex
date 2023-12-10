@@ -19,53 +19,43 @@ struct SuffixArray {
         }
         for (int i = 1; i < n; i++) rank[sa[i]] = i;
         for (int i = 0, j; i < n - 1; lcp[rank[i++]]=k)
-        for (k && k--, j = sa[rank[i] - 1];
-        s[i + k] == s[j + k]; k++);
+            for (k && k--, j = sa[rank[i] - 1];
+                    s[i + k] == s[j + k]; k++);
     }
 };
 struct Rmq {
     const int INF = 1e9;
-    vi rmq;
-    int sz;
-    Rmq(){}
-    void build(int n) {
-        sz = 1;
-        while (sz < n) sz *= 2;
-        rmq.assign(sz * 2, INF);
+    int n;
+    vector<int> rmq;
+    Rmq() {}
+    void build(const vector<int> &x) {
+        assert(x.size() == n);
+        for (int i = 0; i < n; ++i) rmq[n + i] = x[i];
+        for (int i = n - 1; i > 0; --i) rmq[i] = min(rmq[2 * i], rmq[2 * i + 1]);
     }
-    Rmq(int n) {
-        sz = 1;
-        while (sz < n) sz *= 2;
-        rmq.assign(sz * 2, INF);
-    }
+    Rmq(int n) : n(n), rmq(2 * n, INF) {}
+
     void put(int i, int x) {
-        i += sz;
-        ckmin(rmq[i], x);
-        for (i/= 2; i; i/= 2) {
+        rmq[i + n] = min(rmq[i + n], x);
+        for (i = (i + n) / 2; i > 0; i /= 2) {
             rmq[i] = min(rmq[i * 2], rmq[i * 2 + 1]);
         }
     }
     int getMin(int l, int r) { //[l;r)
-    assert(l < r);
-    r--;
-    l += sz;
-    r += sz;
-    int res = INF;
-    while(l < r) {
-        if (l%2 == 1) res = min(res, rmq[l]);
-        if (r%2 == 0) res = min(res, rmq[r]);
-        l = (l + 1)/2;
-        r = (r - 1) /2;
-    }
-    if (l == r) res = min(res, rmq[l]);
-    return res;
+        assert(l < r);
+        int res = INF;
+        for (l += n, r += n; l < r; l /= 2, r /= 2) {
+            if (l & 1) res = min(res, rmq[l++]);
+            if (r & 1) res = min(res, rmq[--r]);
+        }
+        return res;
     }
 };
 
 struct Lc {
-    vi pos;
+    vector<int> pos;
     Rmq rmq;
-    void build(string s) {
+    Lc(string s) : rmq(s.size()) {
         SuffixArray sa(s);
         auto ss = sa.sa;
         ss.erase(ss.begin());
@@ -76,15 +66,12 @@ struct Lc {
 
         pos.resize(s.size());
         assert(s.size() == ss.size());
-        FOR (i, ss.size()) {
+        for (int i = 0; i < ss.size(); ++i) {
             pos[ss[i]] = i;
         }
         int n = s.size();
         assert(lcp.size() == n - 1);
-        rmq.build(n - 1);
-        FOR (i, n - 1) {
-            rmq.put(i, lcp[i]);
-        }
+        rmq.build(lcp);
     }
     int getLcp(int i, int j) {
         i = pos[i]; j = pos[j];
