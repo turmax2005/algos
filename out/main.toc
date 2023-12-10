@@ -23,8 +23,8 @@
 \contentsline {subsection}{\numberline {6.1}Алгоритм Диница}{5}{}%
 \contentsline {subsection}{\numberline {6.2}Mincost k-flow}{5}{}%
 \contentsline {subsubsection}{\numberline {6.2.1}Строим граф}{5}{}%
-\contentsline {subsubsection}{\numberline {6.2.2}Запускаем Форда --- Беллмана}{5}{}%
-\contentsline {subsubsection}{\numberline {6.2.3}Ищем кратчайший путь Дейкстрой с потенциалами}{5}{}%
+\contentsline {subsubsection}{\numberline {6.2.2}Запускаем Форда --- Беллмана}{6}{}%
+\contentsline {subsubsection}{\numberline {6.2.3}Ищем кратчайший путь Дейкстрой с потенциалами}{6}{}%
 \contentsline {subsubsection}{\numberline {6.2.4}Восстанавливаем ответ}{6}{}%
 \contentsline {section}{\numberline {7}FFT \& co}{6}{}%
 \contentsline {subsection}{\numberline {7.1}NTT \& co}{6}{}%
