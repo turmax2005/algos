@@ -31,3 +31,4 @@
 \contentsline {subsubsection}{\numberline {6.2.4}Восстанавливаем ответ}{7}{subsubsection.6.2.4}%
 \contentsline {section}{\numberline {7}FFT \& co}{7}{section.7}%
 \contentsline {subsection}{\numberline {7.1}NTT \& co}{7}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}старое доброе FFT}{8}{subsection.7.2}%
