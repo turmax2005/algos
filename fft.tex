@@ -59,82 +59,82 @@ template<int M, int K, int G> struct Fft {
 Fft<998244353,23,31> muls;
 vector<int> form(vector<int> v,int n)
 {
-    while(v.size()<n) v.push_back(0);
-    while(v.size()>n) v.pop_back();
-    return v;
+  while(v.size()<n) v.push_back(0);
+  while(v.size()>n) v.pop_back();
+  return v;
 }
 vector<int> operator *(vector<int> v1,vector<int> v2)
 {
-    return muls.convolution(v1,v2);
+  return muls.convolution(v1,v2);
 }
 vector<int> operator +(vector<int> v1,vector<int> v2)
 {
-    while(v2.size()<v1.size()) v2.push_back(0); while(v1.size()<v2.size()) v1.push_back(0);
-    for(int i=0;i<v1.size();++i) {v1[i]+=v2[i];if(v1[i]>=p) v1[i]-=p; else if(v1[i]<0) v1[i]+=p;}
-    return v1;
+  while(v2.size()<v1.size()) v2.push_back(0); while(v1.size()<v2.size()) v1.push_back(0);
+  for(int i=0;i<v1.size();++i) {v1[i]+=v2[i];if(v1[i]>=p) v1[i]-=p; else if(v1[i]<0) v1[i]+=p;}
+  return v1;
 }
 vector<int> operator -(vector<int> v1,vector<int> v2)
 {
-    int sz=max(v1.size(),v2.size());while(v1.size()<sz) v1.push_back(0); while(v2.size()<sz) v2.push_back(0);
-    for(int i=0;i<sz;++i) {v1[i]-=v2[i];if(v1[i]<0) v1[i]+=p; else if(v1[i]>=p) v1[i]-=p;} return v1;
+  int sz=max(v1.size(),v2.size());while(v1.size()<sz) v1.push_back(0); while(v2.size()<sz) v2.push_back(0);
+  for(int i=0;i<sz;++i) {v1[i]-=v2[i];if(v1[i]<0) v1[i]+=p; else if(v1[i]>=p) v1[i]-=p;} return v1;
 }
 vector<int> trmi(vector<int> v)
 {
-    for(int i=1;i<v.size();i+=2) {if(v[i]>0) v[i]=p-v[i]; else v[i]=(-v[i]);}
-    return v;
+  for(int i=1;i<v.size();i+=2) {if(v[i]>0) v[i]=p-v[i]; else v[i]=(-v[i]);}
+  return v;
 }
 vector<int> deriv(vector<int> v)
 {
-    if(v.empty()) return{};
-    vector<int> ans(v.size()-1);
-    for(int i=1;i<v.size();++i) ans[i-1]=(v[i]*1LL*i)%p;
-    return ans;
+  if(v.empty()) return{};
+  vector<int> ans(v.size()-1);
+  for(int i=1;i<v.size();++i) ans[i-1]=(v[i]*1LL*i)%p;
+  return ans;
 }
 vector<int> integ(vector<int> v)
 {
-    vector<int> ans(v.size()+1);ans[0]=0;
-    for(int i=1;i<v.size();++i) ans[i-1]=(v[i]*1LL*i)%p;
-    return ans;
+  vector<int> ans(v.size()+1);ans[0]=0;
+  for(int i=1;i<v.size();++i) ans[i-1]=(v[i]*1LL*i)%p;
+  return ans;
 }
 vector<int> mul(vector<vector<int> > v)
 {
-    if(v.size()==1) return v[0];
-    vector<vector<int> > v1,v2;for(int i=0;i<v.size()/2;++i) v1.push_back(v[i]); for(int i=v.size()/2;i<v.size();++i) v2.push_back(v[i]);
-    return muls.convolution(mul(v1),mul(v2));
+  if(v.size()==1) return v[0];
+  vector<vector<int> > v1,v2;for(int i=0;i<v.size()/2;++i) v1.push_back(v[i]); for(int i=v.size()/2;i<v.size();++i) v2.push_back(v[i]);
+  return muls.convolution(mul(v1),mul(v2));
 }
 vector<int> inv1(vector<int> v,int n)
 {
-    assert(v[0]!=0);
-    int sz=1;v=form(v,n);vector<int> a={inv(v[0])};
-    while(sz<n)
-    {
-        vector<int> vsz;for(int i=0;i<min(n,2*sz);++i) vsz.push_back(v[i]);
-        vector<int> b=((vector<int>) {1})-muls.convolution(a,vsz);
-        for(int i=0;i<sz;++i) assert(b[i]==0);
-        b.erase(b.begin(),b.begin()+sz);
-        vector<int> c=muls.convolution(b,a);
-        for(int i=0;i<sz;++i) a.push_back(c[i]);
-        sz*=2;
-    }
-    return form(a,n);
+  assert(v[0]!=0);
+  int sz=1;v=form(v,n);vector<int> a={inv(v[0])};
+  while(sz<n)
+  {
+    vector<int> vsz;for(int i=0;i<min(n,2*sz);++i) vsz.push_back(v[i]);
+    vector<int> b=((vector<int>) {1})-muls.convolution(a,vsz);
+    for(int i=0;i<sz;++i) assert(b[i]==0);
+    b.erase(b.begin(),b.begin()+sz);
+    vector<int> c=muls.convolution(b,a);
+    for(int i=0;i<sz;++i) a.push_back(c[i]);
+    sz*=2;
+  }
+  return form(a,n);
 }
 vector<int> inv(vector<int> v,int n)
 {
-    v=form(v,n);assert(v[0]!=0);if(v.size()==1) {return {inv(v[0])};} vector<int> v1=trmi(v);
-    vector<int> a=v1*v;a=form(a,2*n);
-    vector<int> b((n+1)/2);for(int i=0;i<b.size();++i) b[i]=a[2*i];
-    vector<int> ans1=inv(b,b.size());vector<int> ans2(n);for(int i=0;i<n;++i) {if(i%2==0) ans2[i]=ans1[i/2]; else ans2[i]=0;}
-    return form(v1*ans2,n);
+  v=form(v,n);assert(v[0]!=0);if(v.size()==1) {return {inv(v[0])};} vector<int> v1=trmi(v);
+  vector<int> a=v1*v;a=form(a,2*n);
+  vector<int> b((n+1)/2);for(int i=0;i<b.size();++i) b[i]=a[2*i];
+  vector<int> ans1=inv(b,b.size());vector<int> ans2(n);for(int i=0;i<n;++i) {if(i%2==0) ans2[i]=ans1[i/2]; else ans2[i]=0;}
+  return form(v1*ans2,n);
 }
 vector<int> operator/(vector<int> a,vector<int> b)
 {
-    while(!a.empty() && a.back()==0) a.pop_back(); while(!b.empty() && b.back()==0) b.pop_back();
-    int n=a.size();int m=b.size();if(n<m) return {};
-    reverse(a.begin(),a.end());reverse(b.begin(),b.end());vector<int> ans=a*inv(b,n-m+1);while(ans.size()>n-m+1) ans.pop_back();
-    reverse(ans.begin(),ans.end());while(!ans.empty() && ans.back()==0) ans.pop_back();return ans;
+  while(!a.empty() && a.back()==0) a.pop_back(); while(!b.empty() && b.back()==0) b.pop_back();
+  int n=a.size();int m=b.size();if(n<m) return {};
+  reverse(a.begin(),a.end());reverse(b.begin(),b.end());vector<int> ans=a*inv(b,n-m+1);while(ans.size()>n-m+1) ans.pop_back();
+  reverse(ans.begin(),ans.end());while(!ans.empty() && ans.back()==0) ans.pop_back();return ans;
 }
 vector<int> operator%(vector<int> a,vector <int> b)
 {
-    vector<int> ans=a-b*(a/b);while(!ans.empty() && ans.back()==0) ans.pop_back(); return ans;
+  vector<int> ans=a-b*(a/b);while(!ans.empty() && ans.back()==0) ans.pop_back(); return ans;
 }
 \end{lstlisting}
