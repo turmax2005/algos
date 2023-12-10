@@ -1,0 +1,102 @@
+\subsection{Суфмассив}
+Китайский суффмассив
+\begin{lstlisting}
+struct SuffixArray {
+    vector <int> sa, lcp;
+    SuffixArray (string &s, int lim=256) {
+        int n = (int)s.size() + 1, k = 0, a, b;
+        vector <int> x(s.begin(), s.end() + 1), y(n), ws(max(n, lim)), rank(n);
+        sa = lcp = y, iota(sa.begin(), sa.end(), 0);
+        for (int j = 0, p = 0; p < n; j = max(1ll, j * 2), lim = p) {
+            p = j, iota(y.begin(), y.end(), n - j);
+            for (int i = 0; i < n; i++) if (sa[i] >= j) y[p++] = sa[i] - j;
+            fill(ws.begin(), ws.end(), 0);
+            for (int i = 0; i < n; i++) ws[x[i]]++;
+            for (int i = 1; i < lim; i++) ws[i] += ws[i - 1];
+            for (int i = n; i--; ) sa[--ws[x[y[i]]]] = y[i];
+            swap(x, y), p = 1, x[sa[0]] = 0;
+            for (int i = 1; i < n; i++) a = sa[i - 1], b = sa[i], x[b] = (y[a] == y[b] && y[a + j] == y[b + j]) ? p - 1 : p++;
+        }
+        for (int i = 1; i < n; i++) rank[sa[i]] = i;
+        for (int i = 0, j; i < n - 1; lcp[rank[i++]]=k)
+        for (k && k--, j = sa[rank[i] - 1];
+        s[i + k] == s[j + k]; k++);
+    }
+};
+struct Rmq {
+    const int INF = 1e9;
+    vi rmq;
+    int sz;
+    Rmq(){}
+    void build(int n) {
+        sz = 1;
+        while (sz < n) sz *= 2;
+        rmq.assign(sz * 2, INF);
+    }
+    Rmq(int n) {
+        sz = 1;
+        while (sz < n) sz *= 2;
+        rmq.assign(sz * 2, INF);
+    }
+    void put(int i, int x) {
+        i += sz;
+        ckmin(rmq[i], x);
+        for (i/= 2; i; i/= 2) {
+            rmq[i] = min(rmq[i * 2], rmq[i * 2 + 1]);
+        }
+    }
+    int getMin(int l, int r) { //[l;r)
+    assert(l < r);
+    r--;
+    l += sz;
+    r += sz;
+    int res = INF;
+    while(l < r) {
+        if (l%2 == 1) res = min(res, rmq[l]);
+        if (r%2 == 0) res = min(res, rmq[r]);
+        l = (l + 1)/2;
+        r = (r - 1) /2;
+    }
+    if (l == r) res = min(res, rmq[l]);
+    return res;
+    }
+};
+
+struct Lc {
+    vi pos;
+    Rmq rmq;
+    void build(string s) {
+        SuffixArray sa(s);
+        auto ss = sa.sa;
+        ss.erase(ss.begin());
+
+        auto lcp = sa.lcp;
+        lcp.erase(lcp.begin());
+        lcp.erase(lcp.begin());
+
+        pos.resize(s.size());
+        assert(s.size() == ss.size());
+        FOR (i, ss.size()) {
+            pos[ss[i]] = i;
+        }
+        int n = s.size();
+        assert(lcp.size() == n - 1);
+        rmq.build(n - 1);
+        FOR (i, n - 1) {
+            rmq.put(i, lcp[i]);
+        }
+    }
+    int getLcp(int i, int j) {
+        i = pos[i]; j = pos[j];
+        if (j < i) {
+            swap(i, j);
+        }
+        if (i == j) {
+            return 1e18;
+        }
+        else {
+            return rmq.getMin(i, j);
+        }
+    }
+};
+\end{lstlisting}
