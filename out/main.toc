@@ -17,3 +17,4 @@
 \contentsline {section}{\numberline {5}Строковые алгоритмы}{4}{}%
 \contentsline {subsection}{\numberline {5.1}Префикс-функция}{4}{}%
 \contentsline {subsection}{\numberline {5.2}Z-функция}{4}{}%
+\contentsline {subsection}{\numberline {5.3}Алгоритм Манакера}{4}{}%
