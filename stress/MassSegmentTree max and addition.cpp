@@ -178,7 +178,7 @@ void solve() {
         int n = 256, q = 100000;
         const int M = 10000;
         vector<int> data(n);
-        MassSegmentTree segtree(n, 0LL, 0LL, [](int x, int y) { return max(x, y); }, [](int x, int y) { return x += y; },
+        MassSegmentTree segtree(n, 0LL, 0LL, [](int x, int y) { return max(x, y); }, [](int x, int y) { return x + y; },
                                 [](int x, int y, int len) { return x + y; });
         for (int j = 0; j < q; ++j) {
             int t = rng() % 4;
