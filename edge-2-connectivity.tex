@@ -12,13 +12,13 @@ for (int i = 0; i < m; ++i) {
 }
 vector <int> used(n + 1);
 vector <int> newCompWithoutParent(n + 1), h(n + 1), up(n + 1);
-function <void(int,int)> findCutPoints = [&] (int u, int p) {
+auto findCutPoints = [&] (auto self, int u, int p) -> void {
   used[u] = 1;
   up[u] = h[u];
   for (int v : g[u]) {
     if (!used[v]) {
       h[v] = h[u] + 1;
-      findCutPoints(v, u);
+      self(self, v, u);
       up[u] = min(up[u], up[v]);
       if (up[v] >= h[u]) {
         newCompWithoutParent[v] = 1;
@@ -31,21 +31,21 @@ function <void(int,int)> findCutPoints = [&] (int u, int p) {
 };
 for (int u = 1; u <= n; ++u) {
   if (!used[u]) {
-    findCutPoints(u, u);
+    findCutPoints(findCutPoints, u, u);
   }
 }
 int ptr = 0;
 vector <map <int, int> > colors(m);
-function <void(int, int)> markComponents = [&] (int u, int cur) {
+auto markComponents = [&] (auto self, int u, int cur) -> void {
   used[u] = 1;
   for (int v : g[u]) {
     if (!used[v]) {
       if (newCompWithoutParent[v]) {
         ptr++;
-        markComponents(v, ptr - 1);
+        self(self, v, ptr - 1);
       }
       else {
-        markComponents(v, cur);
+        self(self, v, cur);
       }
     }
     else if (h[v] < h[u]) {
@@ -59,7 +59,7 @@ function <void(int, int)> markComponents = [&] (int u, int cur) {
 used.assign(n + 1, 0);
 for (int u = 1; u <= n; ++u) {
   if (!used[u]) {
-    markComponents(u, -1);
+    markComponents(markComponents, u, -1);
   }
 }
 for (int comp = 0; comp < m; ++comp) {
@@ -77,6 +77,6 @@ for (int comp = 0; comp < m; ++comp) {
     return;
   }
 }
-cout << "No" << endl;  
+cout << "No" << endl;
 \end{lstlisting}
 % https://qoj.ac/submission/281898

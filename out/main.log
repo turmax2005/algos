@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  10 DEC 2023 23:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  10 DEC 2023 23:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -665,7 +665,24 @@ LaTeX Font Info:    Font shape `T2A/cmtt/bx/n' in size <8> not available
 \openout4 = `main.toc'.
 
 
-(./chinese-remainder-theorem.tex) (./miller-rabin.tex) (./berlekamp-massey.tex
+(./chinese-remainder-theorem.tex) (./miller-rabin.tex) (./berlekamp-massey.tex)
+(./SCC and 2SAT.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1.
+
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
@@ -673,24 +690,8 @@ Package fancyhdr Warning: \footskip is too small (8.5359pt):
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-]) (./SCC and 2SAT.tex
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1.
-
-) (./euler.tex) (./edge-2-connectivity.tex
+]) (./euler.tex)
+(./edge-2-connectivity.tex
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
@@ -702,8 +703,7 @@ LaTeX Font Info:    Font shape `T2A/cmtt/bx/n' in size <10.95> not available
  (./convolutions.tex
 LaTeX Font Info:    Font shape `T2A/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `T2A/cmtt/m/n' tried instead on input line 1.
-) (./fenwick.tex) (./ordered-set.tex)
-(./segment-tree.tex
+) (./fenwick.tex) (./segment-tree.tex
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
@@ -713,13 +713,13 @@ Package fancyhdr Warning: \footskip is too small (8.5359pt):
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(./prefix-function.tex
+(./ordered-set.tex) (./prefix-function.tex) (./z-function.tex
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[4]) (./z-function.tex) (./manacher.tex) (./sufarray.tex
+[4]) (./manacher.tex) (./sufarray.tex) (./aho-corasick.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -728,7 +728,7 @@ Package fancyhdr Warning: \footskip is too small (8.5359pt):
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[5]) (./aho-corasick.tex) (./dinic.tex) (./mincost k-flow.tex
+[5]) (./dinic.tex) (./mincost k-flow.tex
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
@@ -760,12 +760,12 @@ Package fancyhdr Warning: \footskip is too small (8.5359pt):
 
 ] (/home/leonid/teambook/out/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 92B0666D3D18C6361DAB026585FAD051;5794.
+(rerunfilecheck)             Checksum: 628D512BD8B926F5A93324A7D298CCFF;5794.
  ) 
 Here is how much of TeX's memory you used:
- 14753 strings out of 479648
- 221653 string characters out of 5886115
- 1823185 words of memory out of 5000000
+ 14751 strings out of 479648
+ 221615 string characters out of 5886115
+ 1802185 words of memory out of 5000000
  31450 multiletter control sequences out of 15000+600000
  480196 words of font info for 58 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
@@ -782,10 +782,10 @@ Here is how much of TeX's memory you used:
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on /home/leonid/teambook/out/main.pdf (9 pages, 216677 bytes).
+Output written on /home/leonid/teambook/out/main.pdf (9 pages, 216757 bytes).
 PDF statistics:
- 1858 PDF objects out of 2073 (max. 8388607)
- 1469 compressed objects within 15 object streams
- 1046 named destinations out of 1200 (max. 500000)
+ 1854 PDF objects out of 2073 (max. 8388607)
+ 1465 compressed objects within 15 object streams
+ 1044 named destinations out of 1200 (max. 500000)
  265 words of extra memory for PDF output out of 10000 (max. 10000000)
 
