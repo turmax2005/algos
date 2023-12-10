@@ -12,3 +12,5 @@
 \contentsline {section}{\numberline {4}Структуры данных}{2}{}%
 \contentsline {subsection}{\numberline {4.1}Дерево Фенвика}{2}{}%
 \contentsline {subsection}{\numberline {4.2}Ordered set}{2}{}%
+\contentsline {subsection}{\numberline {4.3}Дерево отрезков}{3}{}%
+\contentsline {subsubsection}{\numberline {4.3.1}Примеры:}{4}{}%
