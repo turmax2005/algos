@@ -1,0 +1,48 @@
+\subsection{Алгоритм Ахо --- Корасик}
+\begin{lstlisting}
+struct node{
+  node *next[26] = {}, *link[26] = {};
+  node *suf = nullptr;
+  vector<int> term;
+  int visited = 0;
+  node() {}
+  node *get_next(char c) {
+    if (next[c - 'a'] == nullptr) next[c - 'a'] = new node();
+    return next[c - 'a'];
+  }
+};
+node *root = new node();
+for (int i = 0; i < s.size(); ++i) {
+  node *cur = root;
+  for (char c : s[i]) cur = cur->get_next(c);
+  cur->term.push_back(i);
+}
+vector<node *> bfs_order;
+queue<node *> bfs;
+root->suf = root;
+for (char c = 'a'; c <= 'z'; ++c) root->link[c - 'a'] = (root->next[c - 'a'] ? root->next[c - 'a'] : root);
+bfs.push(root);
+while (!bfs.empty()) {
+  node *cur = bfs.front();
+  bfs_order.push_back(cur);
+  bfs.pop();
+  for (char c = 'a';  c <= 'z'; ++c) {
+    node *nxt = cur->next[c - 'a'];
+    if (!nxt) continue;
+    nxt->suf = (cur == root ? cur : cur->suf->link[c - 'a']);
+    for (char c = 'a'; c <= 'z'; ++c) nxt->link[c - 'a'] = (nxt->next[c - 'a'] ? nxt->next[c - 'a'] : nxt->suf->link[c - 'a']);
+    bfs.push(nxt);
+  }
+}
+node *cur = root;
+for (char c : t) {
+  cur = cur->link[c - 'a'];
+  cur->visited++;
+}
+vector<int> count(n);
+for (int i = bfs_order.size() - 1; i >= 0; --i) {
+  node *cur = bfs_order[i];
+  for (int idx : cur->term) count[idx] = cur->visited;
+  cur->suf->visited += cur->visited;
+}
+\end{lstlisting}

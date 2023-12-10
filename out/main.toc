@@ -5,26 +5,28 @@
 \contentsline {section}{\numberline {2}Графы}{1}{}%
 \contentsline {subsection}{\numberline {2.1}$\mathcal {SCC}$ и 2-$\mathcal {SAT}$}{1}{}%
 \contentsline {subsection}{\numberline {2.2}Эйлеров цикл}{2}{}%
+\contentsline {subsection}{\numberline {2.3}Компоненты рёберной двусвязности}{2}{}%
 \contentsline {section}{\numberline {3}\texttt {xor}, \texttt {and}, \texttt {or}-свёртки}{2}{}%
 \contentsline {subsection}{\numberline {3.1}\texttt {and}-свёртка}{2}{}%
-\contentsline {subsection}{\numberline {3.2}\texttt {or}-свёртка}{2}{}%
-\contentsline {subsection}{\numberline {3.3}\texttt {xor}-свёртка}{2}{}%
-\contentsline {section}{\numberline {4}Структуры данных}{2}{}%
-\contentsline {subsection}{\numberline {4.1}Дерево Фенвика}{2}{}%
-\contentsline {subsection}{\numberline {4.2}Ordered set}{2}{}%
+\contentsline {subsection}{\numberline {3.2}\texttt {or}-свёртка}{3}{}%
+\contentsline {subsection}{\numberline {3.3}\texttt {xor}-свёртка}{3}{}%
+\contentsline {section}{\numberline {4}Структуры данных}{3}{}%
+\contentsline {subsection}{\numberline {4.1}Дерево Фенвика}{3}{}%
+\contentsline {subsection}{\numberline {4.2}Ordered set}{3}{}%
 \contentsline {subsection}{\numberline {4.3}Дерево отрезков}{3}{}%
-\contentsline {subsubsection}{\numberline {4.3.1}Примеры:}{4}{}%
+\contentsline {subsubsection}{\numberline {4.3.1}Примеры использования}{4}{}%
 \contentsline {section}{\numberline {5}Строковые алгоритмы}{4}{}%
 \contentsline {subsection}{\numberline {5.1}Префикс-функция}{4}{}%
 \contentsline {subsection}{\numberline {5.2}Z-функция}{4}{}%
-\contentsline {subsection}{\numberline {5.3}Алгоритм Манакера}{4}{}%
-\contentsline {subsection}{\numberline {5.4}Суфмассив}{4}{}%
-\contentsline {section}{\numberline {6}Потоки}{5}{}%
-\contentsline {subsection}{\numberline {6.1}Алгоритм Диница}{5}{}%
-\contentsline {subsection}{\numberline {6.2}Mincost k-flow}{5}{}%
-\contentsline {subsubsection}{\numberline {6.2.1}Строим граф}{5}{}%
+\contentsline {subsection}{\numberline {5.3}Алгоритм Манакера}{5}{}%
+\contentsline {subsection}{\numberline {5.4}Суфмассив}{5}{}%
+\contentsline {subsection}{\numberline {5.5}Алгоритм Ахо --- Корасик}{5}{}%
+\contentsline {section}{\numberline {6}Потоки}{6}{}%
+\contentsline {subsection}{\numberline {6.1}Алгоритм Диница}{6}{}%
+\contentsline {subsection}{\numberline {6.2}Mincost k-flow}{6}{}%
+\contentsline {subsubsection}{\numberline {6.2.1}Строим граф}{6}{}%
 \contentsline {subsubsection}{\numberline {6.2.2}Запускаем Форда --- Беллмана}{6}{}%
-\contentsline {subsubsection}{\numberline {6.2.3}Ищем кратчайший путь Дейкстрой с потенциалами}{6}{}%
-\contentsline {subsubsection}{\numberline {6.2.4}Восстанавливаем ответ}{6}{}%
-\contentsline {section}{\numberline {7}FFT \& co}{6}{}%
-\contentsline {subsection}{\numberline {7.1}NTT \& co}{6}{}%
+\contentsline {subsubsection}{\numberline {6.2.3}Ищем кратчайший путь Дейкстрой с потенциалами}{7}{}%
+\contentsline {subsubsection}{\numberline {6.2.4}Восстанавливаем ответ}{7}{}%
+\contentsline {section}{\numberline {7}FFT \& co}{7}{}%
+\contentsline {subsection}{\numberline {7.1}NTT \& co}{7}{}%
