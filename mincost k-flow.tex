@@ -59,18 +59,20 @@ auto dijkstra = [&](int s, int t) {
   from.assign(n, -1);
   cnt.assign(n, false);
   dist[s] = 0;
-  for (int i = 1; i < n; ++i) {
-    int cur = find(cnt.begin(), cnt.end(), false) - cnt.begin();
-    for (int j = 0; j < n; ++j) {
-      if (!cnt[j] && dist[j] < dist[cur]) cur = j;
-    }
+  set <pair <int, int> > se;
+  se.insert({0, s});
+  while ((int)(se.size())) {
+    int cur = se.begin()->y;
+    se.erase(se.begin());
     cnt[cur] = true;
     for (int index : g[cur]) {
       auto &edge = e[index];
       if (edge.rem() == 0) continue;
       ll weight = edge.cost + phi[cur] - phi[edge.next];
       if (dist[edge.next] > dist[cur] + weight) {
+        se.erase({dist[edge.next], edge.next});
         dist[edge.next] = dist[cur] + weight;
+        se.insert({dist[edge.next], edge.next});
         from[edge.next] = cur;
       }
     }
