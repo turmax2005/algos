@@ -12,12 +12,12 @@ jobs:
 
     steps:
       - name: compiling
-        run: cd ./example && g++ a_plus_b.cpp -o a_plus_b
+        run: cd example && g++ a_plus_b.cpp -o a_plus_b
       - name: creating input
-        run: cd ./example && echo "1 2" >> in
+        run: cd example && echo "1 2" >> in
       - name: running code
-        run: cd ./example && ./a_plus_b < in > out
+        run: cd example && ./a_plus_b < in > out
       - name: running stupid solution
-        run: cd ./example && echo "3" >> out2
+        run: cd example && echo "3" >> out2
       - name: comparing output
-        run: cd ./example && diff -s out out2
+        run: cd example && diff -s out out2
