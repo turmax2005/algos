@@ -11,10 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: trivial
-        run: echo a
-#      - name: compiling
-#        run: cd example && g++ a_plus_b.cpp -o a_plus_b
+      - uses: actions/checkout@v3
+      - name: navigating
+        run: cd example
 #      - name: creating input
 #        run: cd example && echo "1 2" >> in
 #      - name: running code
