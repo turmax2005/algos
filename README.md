@@ -1,1 +1,1 @@
-Here is current version of Block of Cats teambook. ![example](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+Here is current version of Block of Cats teambook. ![Build Status](https://circleci.com/gh/No-Idle/teambook.png?circle-token=:circle-token)
