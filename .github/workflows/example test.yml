@@ -12,11 +12,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: creating input
+      - name: creating the input
         run: cd example && echo "1 2" >> in
-      - name: running code
+      - name: compiling the code
+        run: cd example && g++ a_plus_b.cpp -o a_plus_b
+      - name: running the code
         run: cd example && ./a_plus_b < in > out
-      - name: running stupid solution
+      - name: running a stupid solution
         run: cd example && echo "3" >> out2
-      - name: comparing output
+      - name: comparing the outputs
         run: cd example && diff -s out out2
