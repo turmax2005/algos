@@ -12,11 +12,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Set up C++ build environment
-        uses: actions/setup-cpp@v1
-        with:
-          compiler: 'g++'
-          cpp-version: '20'
       - name: creating the input
         run: cd example && echo "1 2" >> in
       - name: compiling the code
