@@ -40,3 +40,4 @@
 \contentsline {subsection}{\numberline {9.1}Флаги компияции}{9}{subsection.9.1}%
 \contentsline {subsubsection}{\numberline {9.1.1}Сеточка в vim}{9}{subsubsection.9.1.1}%
 \contentsline {subsection}{\numberline {9.2}Что сделать на пробном туре}{9}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Шаблон}{9}{subsection.9.3}%

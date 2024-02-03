@@ -15,4 +15,23 @@ Vky35Pdd
 \item В системе ML --- это ML или RE?
 \item Максимальный размер файла
 \item Можно посмотреть на время работы серверов позапускав Флойда --- Варшалла
+\subsection{Шаблон}
+\begin{lstlisting}
+#include<bits/stdc++.h>
+
+using namespace std;
+
+#define int long long
+#define app push_back
+#define all(x) x.begin(), x.end()
+#define debug(...) println(#__VA_ARGS__, ":", __VA_ARGS__)
+
+void println(auto... a) {
+    ((cout << a << ' '), ...) << '\n';
+}
+
+int32_t main() {
+    cin.tie(0);ios_base::sync_with_stdio(0);
+}
+\end{lstlisting}
 \end{itemize}
