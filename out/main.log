@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  12 JAN 2024 21:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  3 FEB 2024 20:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -726,29 +726,26 @@ Package fancyhdr Warning: \footskip is too small (8.5359pt):
 [2])
 LaTeX Font Info:    Font shape `T2A/cmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `T2A/cmtt/m/n' tried instead on input line 77.
- (./convolutions.tex
+ (./convolutions/convolutions.tex
 LaTeX Font Info:    Font shape `T2A/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `T2A/cmtt/m/n' tried instead on input line 1.
 ) (./fenwick.tex) (./segment-tree.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-)
-(./ordered-set.tex) (./prefix-function.tex) (./z-function.tex
+[3]) (./ordered-set.tex) (./prefix-function.tex) (./z-function.tex)
+(./manacher.tex
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[4]) (./manacher.tex) (./sufarray.tex) (./aho-corasick.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+[4]) (./sufarray.tex) (./aho-corasick.tex
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
@@ -761,12 +758,6 @@ Package fancyhdr Warning: \footskip is too small (8.5359pt):
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
 [6]) (./fft.tex
-
-Package fancyhdr Warning: \footskip is too small (8.5359pt): 
-(fancyhdr)                Make it at least 9.49998pt, for example:
-(fancyhdr)                \setlength{\footskip}{9.49998pt}.
-
-[7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -775,7 +766,13 @@ Package fancyhdr Warning: \footskip is too small (8.5359pt):
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[8]) (./miscellaneous.tex
+[7]) (./stress/tangents.cpp
+
+Package fancyhdr Warning: \footskip is too small (8.5359pt): 
+(fancyhdr)                Make it at least 9.49998pt, for example:
+(fancyhdr)                \setlength{\footskip}{9.49998pt}.
+
+[8]) (./geomPrim.cpp) (./inPolygon.cpp) (./miscellaneous.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 \T2A/cmtt/m/n/8 -DLOCAL -Wall -Wextra -pedantic -Wshadow -Wformat=2
  []
@@ -800,27 +797,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 \T2A/cmtt/m/n/8 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover
  []
 
-) 
+
+Underfull \vbox (badness 6032) has occurred while \output is active []
+
+)
+
 AED: lastpage setting LastPage
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[9
-
-] (/home/leonid/teambook/out/main.aux)
+[9] (/home/leonid/teambook/out/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9E0F1457D5FF1971DEDED9F4BCCEB4E1;6501.
+(rerunfilecheck)             Checksum: EA38B7B0499A54CA073B9D0BB56747CD;7175.
  ) 
 Here is how much of TeX's memory you used:
- 15133 strings out of 479648
- 228326 string characters out of 5886115
- 1806188 words of memory out of 5000000
- 31801 multiletter control sequences out of 15000+600000
+ 15231 strings out of 479648
+ 229800 string characters out of 5886115
+ 1857188 words of memory out of 5000000
+ 31830 multiletter control sequences out of 15000+600000
  480196 words of font info for 58 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 60i,12n,69p,477b,1058s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,69p,477b,1062s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.60
 0pk> </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/lh/lh-t2a/latt1000.60
 0pk> </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/lh/lh-t2a/latt1095.60
@@ -833,10 +832,10 @@ Here is how much of TeX's memory you used:
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on /home/leonid/teambook/out/main.pdf (9 pages, 224826 bytes).
+Output written on /home/leonid/teambook/out/main.pdf (9 pages, 229448 bytes).
 PDF statistics:
- 1907 PDF objects out of 2073 (max. 8388607)
- 1494 compressed objects within 15 object streams
- 1053 named destinations out of 1200 (max. 500000)
- 297 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1995 PDF objects out of 2073 (max. 8388607)
+ 1578 compressed objects within 16 object streams
+ 1110 named destinations out of 1200 (max. 500000)
+ 329 words of extra memory for PDF output out of 10000 (max. 10000000)
 
