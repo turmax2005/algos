@@ -24,7 +24,11 @@ using namespace std;
 #define int long long
 #define app push_back
 #define all(x) x.begin(), x.end()
+#ifdef LOCAL
 #define debug(...) [](auto...a){ ((cout << a << ' '), ...) << endl; }(#__VA_ARGS__, ":", __VA_ARGS__)
+#else
+#define debug(...)
+#endif
 
 int32_t main() {
     cin.tie(0);ios_base::sync_with_stdio(0);
