@@ -43,8 +43,8 @@ struct suar {
         }
         for (int i = 1; i < n; i++) rank[sa[i]] = i;
         for (int i = 0, j; i < n - 1; lcp[rank[i++]]=k)
-          for (k && k--, j = sa[rank[i] - 1];
-              s[i + k] == s[j + k]; k++);
+            for (k && k--, j = sa[rank[i] - 1];
+                s[i + k] == s[j + k]; k++);
         sa.erase(sa.begin()); lcp.erase(lcp.begin()); lcp.erase(lcp.begin());
         t.build(lcp);
         for (auto &e : rank) {
