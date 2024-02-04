@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  4 FEB 2024 00:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  4 FEB 2024 21:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -745,13 +745,16 @@ Package fancyhdr Warning: \footskip is too small (8.5359pt):
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[4]) (./sufarray.tex) (./aho-corasick.tex
+[4]) (./sufarray.tex (./sa.cpp)) (./aho-corasick.tex) (./dinic.tex
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[5]) (./dinic.tex) (./mincost k-flow.tex
+[5]) (./mincost k-flow.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
@@ -797,11 +800,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 \T2A/cmtt/m/n/8 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover
  []
 
-
-Underfull \vbox (badness 6032) has occurred while \output is active []
-
-)
-
+) 
 AED: lastpage setting LastPage
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
@@ -813,10 +812,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 33720659A022A8C0055808F97DAEEDF3;7281.
  ) 
 Here is how much of TeX's memory you used:
- 15274 strings out of 479648
- 230359 string characters out of 5886115
- 1857188 words of memory out of 5000000
- 31855 multiletter control sequences out of 15000+600000
+ 15254 strings out of 479648
+ 230037 string characters out of 5886115
+ 1848188 words of memory out of 5000000
+ 31851 multiletter control sequences out of 15000+600000
  480196 words of font info for 58 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  60i,12n,69p,477b,1062s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -832,10 +831,10 @@ Here is how much of TeX's memory you used:
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on /home/leonid/teambook/out/main.pdf (9 pages, 231846 bytes).
+Output written on /home/leonid/teambook/out/main.pdf (9 pages, 231412 bytes).
 PDF statistics:
- 2024 PDF objects out of 2073 (max. 8388607)
- 1604 compressed objects within 17 object streams
- 1128 named destinations out of 1200 (max. 500000)
+ 2000 PDF objects out of 2073 (max. 8388607)
+ 1581 compressed objects within 16 object streams
+ 1109 named destinations out of 1200 (max. 500000)
  337 words of extra memory for PDF output out of 10000 (max. 10000000)
 
