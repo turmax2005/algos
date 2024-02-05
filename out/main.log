@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  4 FEB 2024 21:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  5 FEB 2024 23:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -563,27 +563,27 @@ File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Info: Redefining \th on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Info: Redefining \th on input line 59.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -621,7 +621,7 @@ LaTeX Info: Redefining \th on input line 61.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 61.
+(lastpage)             ! on input line 59.
 \c@lstlisting=\count283
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -645,7 +645,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 61.
+Package hyperref Info: Link coloring ON on input line 59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -658,9 +658,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count290
 )
-LaTeX Info: Redefining \ref on input line 61.
-LaTeX Info: Redefining \pageref on input line 61.
-LaTeX Info: Redefining \nameref on input line 61.
+LaTeX Info: Redefining \ref on input line 59.
+LaTeX Info: Redefining \pageref on input line 59.
+LaTeX Info: Redefining \nameref on input line 59.
 
 (/home/leonid/teambook/out/main.out) (/home/leonid/teambook/out/main.out)
 \@outlinefile=\write3
@@ -725,11 +725,46 @@ Package fancyhdr Warning: \footskip is too small (8.5359pt):
 
 [2])
 LaTeX Font Info:    Font shape `T2A/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T2A/cmtt/m/n' tried instead on input line 77.
- (./convolutions/convolutions.tex
-LaTeX Font Info:    Font shape `T2A/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T2A/cmtt/m/n' tried instead on input line 1.
-) (./fenwick.tex) (./segment-tree.tex
+(Font)              Font shape `T2A/cmtt/m/n' tried instead on input line 75.
+ (./convolutions/convolutions.cpp) (./fenwick.tex
+Underfull \vbox (badness 3000) has occurred while \output is active []
+
+)
+(./segment-tree.tex
+
+Package fancyhdr Warning: \footskip is too small (8.5359pt): 
+(fancyhdr)                Make it at least 9.49998pt, for example:
+(fancyhdr)                \setlength{\footskip}{9.49998pt}.
+
+[3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+(./ordered-set.tex) (./prefix-function.tex) (./z-function.tex
+
+Package fancyhdr Warning: \footskip is too small (8.5359pt): 
+(fancyhdr)                Make it at least 9.49998pt, for example:
+(fancyhdr)                \setlength{\footskip}{9.49998pt}.
+
+[4]) (./manacher.tex) (./sufarray.tex (./sa.cpp)) (./aho-corasick.cpp
+
+Package fancyhdr Warning: \footskip is too small (8.5359pt): 
+(fancyhdr)                Make it at least 9.49998pt, for example:
+(fancyhdr)                \setlength{\footskip}{9.49998pt}.
+
+[5]) (./palindromic.cpp) (./dinic.tex
+
+Package fancyhdr Warning: \footskip is too small (8.5359pt): 
+(fancyhdr)                Make it at least 9.49998pt, for example:
+(fancyhdr)                \setlength{\footskip}{9.49998pt}.
+
+[6]) (./mincost k-flow.tex) (./fft.tex
+
+Package fancyhdr Warning: \footskip is too small (8.5359pt): 
+(fancyhdr)                Make it at least 9.49998pt, for example:
+(fancyhdr)                \setlength{\footskip}{9.49998pt}.
+
+[7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -738,44 +773,8 @@ Package fancyhdr Warning: \footskip is too small (8.5359pt):
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[3]) (./ordered-set.tex) (./prefix-function.tex) (./z-function.tex)
-(./manacher.tex
-
-Package fancyhdr Warning: \footskip is too small (8.5359pt): 
-(fancyhdr)                Make it at least 9.49998pt, for example:
-(fancyhdr)                \setlength{\footskip}{9.49998pt}.
-
-[4]) (./sufarray.tex (./sa.cpp)) (./aho-corasick.tex) (./dinic.tex
-
-Package fancyhdr Warning: \footskip is too small (8.5359pt): 
-(fancyhdr)                Make it at least 9.49998pt, for example:
-(fancyhdr)                \setlength{\footskip}{9.49998pt}.
-
-[5]) (./mincost k-flow.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \footskip is too small (8.5359pt): 
-(fancyhdr)                Make it at least 9.49998pt, for example:
-(fancyhdr)                \setlength{\footskip}{9.49998pt}.
-
-[6]) (./fft.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \footskip is too small (8.5359pt): 
-(fancyhdr)                Make it at least 9.49998pt, for example:
-(fancyhdr)                \setlength{\footskip}{9.49998pt}.
-
-[7]) (./stress/tangents.cpp
-
-Package fancyhdr Warning: \footskip is too small (8.5359pt): 
-(fancyhdr)                Make it at least 9.49998pt, for example:
-(fancyhdr)                \setlength{\footskip}{9.49998pt}.
-
-[8]) (./geomPrim.cpp) (./inPolygon.cpp) (./miscellaneous.tex
+[8]) (./stress/tangents.cpp) (./geomPrim.cpp) (./inPolygon.cpp)
+(./miscellaneous.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 \T2A/cmtt/m/n/8 -DLOCAL -Wall -Wextra -pedantic -Wshadow -Wformat=2
  []
@@ -800,27 +799,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 \T2A/cmtt/m/n/8 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover
  []
 
-) 
+
+Package fancyhdr Warning: \footskip is too small (8.5359pt): 
+(fancyhdr)                Make it at least 9.49998pt, for example:
+(fancyhdr)                \setlength{\footskip}{9.49998pt}.
+
+[9]) 
 AED: lastpage setting LastPage
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[9] (/home/leonid/teambook/out/main.aux)
+[10
+
+] (/home/leonid/teambook/out/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 33720659A022A8C0055808F97DAEEDF3;7281.
+(rerunfilecheck)             Checksum: A78321CC68C00FC289FCB9B358C4D43D;7086.
  ) 
 Here is how much of TeX's memory you used:
- 15254 strings out of 479648
- 230037 string characters out of 5886115
- 1848188 words of memory out of 5000000
- 31851 multiletter control sequences out of 15000+600000
- 480196 words of font info for 58 fonts, out of 8000000 for 9000
+ 15353 strings out of 479648
+ 231224 string characters out of 5886115
+ 1869198 words of memory out of 5000000
+ 31877 multiletter control sequences out of 15000+600000
+ 479886 words of font info for 57 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 60i,12n,69p,477b,1062s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,69p,477b,1060s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.60
-0pk> </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/lh/lh-t2a/latt1000.60
 0pk> </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/lh/lh-t2a/latt1095.60
 0pk> </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1000.60
 0pk> </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/lh/lh-t2a/latt0800.60
@@ -831,10 +836,10 @@ Here is how much of TeX's memory you used:
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on /home/leonid/teambook/out/main.pdf (9 pages, 231412 bytes).
+Output written on /home/leonid/teambook/out/main.pdf (10 pages, 234989 bytes).
 PDF statistics:
- 2000 PDF objects out of 2073 (max. 8388607)
- 1581 compressed objects within 16 object streams
- 1109 named destinations out of 1200 (max. 500000)
- 337 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2072 PDF objects out of 2073 (max. 8388607)
+ 1657 compressed objects within 17 object streams
+ 1180 named destinations out of 1200 (max. 500000)
+ 321 words of extra memory for PDF output out of 10000 (max. 10000000)
 
