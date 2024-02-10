@@ -1,4 +1,5 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/scc"
+
 #include <bits/stdc++.h>
 
 #define int long long
