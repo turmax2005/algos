@@ -1,0 +1,16 @@
+name: compile_pdf
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install LaTeX
+        run: sudo apt-get install texlive
+      - name: Compile LaTeX to PDF
+        run: pdflatex -output-directory=out main.tex
