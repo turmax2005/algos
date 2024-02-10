@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  6 FEB 2024 15:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  10 FEB 2024 17:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -746,41 +746,38 @@ Package fancyhdr Warning: \footskip is too small (8.5359pt):
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[4]) (./prefix-function.tex) (./z-function.tex) (./manacher.tex)
-(./sufarray.tex (./sa.cpp
+[4]) (./centroids.cpp) (./prefix-function.tex) (./z-function.tex)
+(./manacher.tex) (./sufarray.tex (./sa.cpp
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[5])) (./aho-corasick.cpp) (./palindromic.cpp) (./dinic.tex
+[5])) (./aho-corasick.cpp) (./palindromic.cpp
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[6]) (./mincost k-flow.tex
+[6]) (./dinic.tex) (./mincost k-flow.tex
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
 [7]) (./fft.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[8]) (./stress/tangents.cpp) (./geomPrim.cpp
+[8]) (./stress/tangents.cpp
 
 Package fancyhdr Warning: \footskip is too small (8.5359pt): 
 (fancyhdr)                Make it at least 9.49998pt, for example:
 (fancyhdr)                \setlength{\footskip}{9.49998pt}.
 
-[9]) (./inPolygon.cpp) (./miscellaneous.tex
+[9]) (./geomPrim.cpp) (./inPolygon.cpp) (./miscellaneous.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 \T2A/cmtt/m/n/8 -DLOCAL -Wall -Wextra -pedantic -Wshadow -Wformat=2
  []
@@ -814,16 +811,16 @@ Package fancyhdr Warning: \footskip is too small (8.5359pt):
 
 [10] (/home/leonid/teambook/out/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B4F463EEBA3094D16CD9C08A8AA8F5E6;7235.
+(rerunfilecheck)             Checksum: 566737CF5B5F2A5B7122EDD0F6D6956C;7485.
  ) 
 Here is how much of TeX's memory you used:
- 15428 strings out of 479648
- 232234 string characters out of 5886115
- 1839198 words of memory out of 5000000
- 31905 multiletter control sequences out of 15000+600000
+ 15486 strings out of 479648
+ 233066 string characters out of 5886115
+ 1974198 words of memory out of 5000000
+ 31922 multiletter control sequences out of 15000+600000
  479886 words of font info for 57 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 60i,12n,69p,477b,1060s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,69p,477b,1062s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.60
 0pk> </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/lh/lh-t2a/latt1095.60
 0pk> </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1000.60
@@ -835,10 +832,10 @@ Here is how much of TeX's memory you used:
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on /home/leonid/teambook/out/main.pdf (10 pages, 241284 bytes).
+Output written on /home/leonid/teambook/out/main.pdf (10 pages, 244202 bytes).
 PDF statistics:
- 2138 PDF objects out of 2487 (max. 8388607)
- 1713 compressed objects within 18 object streams
- 1224 named destinations out of 1440 (max. 500000)
- 329 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2191 PDF objects out of 2487 (max. 8388607)
+ 1764 compressed objects within 18 object streams
+ 1262 named destinations out of 1440 (max. 500000)
+ 337 words of extra memory for PDF output out of 10000 (max. 10000000)
 
