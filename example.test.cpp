@@ -73,7 +73,7 @@ void solve() {
     cout << color << '\n';
     for (int i = 0; i < color; ++i) {
         cout << where[i].size();
-        for (int x : where[i]) cout << ' ' << x + 2;
+        for (int x : where[i]) cout << ' ' << x;
         cout << '\n';
     }
 }
