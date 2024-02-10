@@ -12,5 +12,7 @@ jobs:
     steps:
       - name: Install LaTeX
         run: sudo apt-get install texlive
+      - name: ls
+        run: ls
       - name: Compile LaTeX to PDF
         run: pdflatex -output-directory=out main.tex
