@@ -24,7 +24,7 @@ jobs:
 #          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Check commit message
         id: check_commit_message
-        run: echo ::set-output name=message_contains_keyword::$(echo ${{ github.event.head_commit.message }} | grep -c 'compile-pdf')
+        run: echo "message_contains_keyword=$(echo ${{ github.event.head_commit.message }} | grep -c 'compile-pdf')" >> $GITHUB_ENV
 
       - name: Install LaTeX
         if: steps.check_commit_message.outputs.message_contains_keyword == '1'
