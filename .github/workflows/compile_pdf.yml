@@ -24,26 +24,27 @@ jobs:
 #          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Check commit message
         id: check_commit_message
-        run: echo "message_contains_keyword=$(echo ${{ github.event.head_commit.message }} | grep -c 'compile-pdf')" >> $GITHUB_ENV
+        run: |
+          commit_message=$(git log --format=%B -n 1 ${{ github.sha }})
+          if [[ $commit_message == *"skip-ci"* ]]; then
+            echo "Commit message contains 'skip-ci'. Skipping workflow."
+            exit 78
+          fi
 
       - name: Install LaTeX
-        if: steps.check_commit_message.outputs.message_contains_keyword == '1'
         run: sudo apt-get update && sudo apt-get install texlive-full
 
       - name: Compile LaTeX to PDF
-        if: steps.check_commit_message.outputs.message_contains_keyword == '1'
         run: pdflatex --output-directory=out main.tex
 
       - name: Add and commit PDF file
-        if: steps.check_commit_message.outputs.message_contains_keyword == '1'
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
           git add out/main.pdf
-          git commit -m "Add compiled PDF file"
+          git commit -m "skip ci"
 
       - name: Push changes
-        if: steps.check_commit_message.outputs.message_contains_keyword == '1'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
