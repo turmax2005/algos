@@ -22,10 +22,15 @@ jobs:
           fi
 
       - name: Install LaTeX
-        run: sudo apt-get update && sudo apt-get install texlive-full
+        run: |
+          sudo apt-get update
+          sudo apt-get install texlive-latex-recommended
+          sudo apt-get install texlive-generic-extra
+          sudo apt-get install texlive-lang-cyrillic
+
 
       - name: Compile LaTeX to PDF
-        run: pdflatex -output-directory=out main.tex
+        run: pdflatex main.tex
 
       - name: Add and commit PDF file
         run: |
