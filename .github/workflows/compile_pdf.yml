@@ -17,4 +17,4 @@ jobs:
       - name: pwd
         run: echo "$PWD"
       - name: Compile LaTeX to PDF
-        run: pdflatex -output-directory=out main.tex
+        run: cd front && pdflatex -output-directory=out main.tex
