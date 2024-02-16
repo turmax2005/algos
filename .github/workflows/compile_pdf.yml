@@ -11,11 +11,39 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+#      - name: Add and commit PDF file
+#        run: |
+#         git config --global user.email "actions@github.com"
+#         git config --global user.name "GitHub Actions"
+#         git add out/main.pdf
+#         git commit -m "added auto-compiled pdf"
+#
+#      - name: Push changes
+#        uses: ad-m/github-push-action@main
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check commit message
+        id: check_commit_message
+        run: echo ::set-output name=message_contains_keyword::$(echo ${{ github.event.head_commit.message }} | grep -c 'compile-pdf')
+
       - name: Install LaTeX
-        run: sudo apt-get update && sudo apt-get install texlive && sudo apt-get install texlive-lang-cyrillic
-      - name: ls
-        run: ls
-      - name: pwd
-        run: echo "$PWD"
+        if: steps.check_commit_message.outputs.message_contains_keyword == '1'
+        run: sudo apt-get update && sudo apt-get install texlive-full
+
       - name: Compile LaTeX to PDF
-        run: pdflatex main.tex
+        if: steps.check_commit_message.outputs.message_contains_keyword == '1'
+        run: pdflatex --output-directory=out main.tex
+
+      - name: Add and commit PDF file
+        if: steps.check_commit_message.outputs.message_contains_keyword == '1'
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add out/main.pdf
+          git commit -m "Add compiled PDF file"
+
+      - name: Push changes
+        if: steps.check_commit_message.outputs.message_contains_keyword == '1'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
