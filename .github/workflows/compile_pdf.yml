@@ -10,6 +10,7 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Install LaTeX
         run: sudo apt-get install texlive
       - name: ls
@@ -17,4 +18,4 @@ jobs:
       - name: pwd
         run: echo "$PWD"
       - name: Compile LaTeX to PDF
-        run: cd front && pdflatex -output-directory=out main.tex
+        run: pdflatex -output-directory=out main.tex
