@@ -25,6 +25,7 @@ jobs:
         run: |
           pdflatex main.tex
           pdflatex main.tex
+          mkdir -p out
           mv main.pdf out/main.pdf
 #          double compilation is required to obtain the table of contents and some other things
 
