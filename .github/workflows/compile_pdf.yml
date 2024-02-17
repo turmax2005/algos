@@ -12,9 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Pull latest changes from the remote repository
-        run: git pull origin main
-
       - name: Install LaTeX
         run: |
           sudo apt-get update
@@ -27,14 +24,16 @@ jobs:
           pdflatex main.tex
           mkdir -p out
           mv main.pdf out/main.pdf
-#          double compilation is required to obtain the table of contents and some other things
+
+      - name: Pull latest changes from the remote repository
+        run: git pull origin main
 
       - name: Add and commit PDF file
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
           git add out/main.pdf
-          git commit -m "skip ci"
+          git commit -m "add auto-compile pdf"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
