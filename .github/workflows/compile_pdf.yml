@@ -12,21 +12,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Pull latest changes from the remote repository
+        run: git pull origin main
+
       - name: Install LaTeX
         run: |
           sudo apt-get update
           sudo apt-get install texlive-latex-extra
           sudo apt-get install texlive-lang-cyrillic
 
-
       - name: Compile LaTeX to PDF
         run: |
-          pdflatex -output-directory out main.tex
-          pdflatex -output-directory out main.tex
+          pdflatex main.tex
+          pdflatex main.tex
+          mv main.pdf out/main.pdf
 #          double compilation is required to obtain the table of contents and some other things
 
-      - name: Pull latest changes from the remote repository
-        run: git pull origin main
       - name: Add and commit PDF file
         run: |
           git config --global user.email "actions@github.com"
