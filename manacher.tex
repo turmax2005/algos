@@ -38,4 +38,15 @@ vector <int> manacher_even(const string &s) {
 }
 // abacaba : (0 0 0 0 0 0)
 // abbaa : (0 2 0 1)
+
+auto pal = [&] (int l, int len) {
+    if (len & 1) {
+        int m = l + len/2;
+        return odd[m] >= len/2;
+    }
+    else {
+        int m = l + len/2 - 1;
+        return even[m] >= len/2;
+    }
+};
 \end{lstlisting}
