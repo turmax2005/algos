@@ -61,50 +61,42 @@
     \tableofcontents
     \newpage
     \section{Теория чисел}
-    \input{chinese-remainder-theorem.tex}
-    \input{miller-rabin}
-    \input{berlekamp-massey}
+    \input{algos/chinese remainder theorem/chinese-remainder-theorem.tex}
+    \input{algos/miller rabin/miller-rabin.tex}
+    \input{algos/berlekamp massey/berlekamp-massey.tex}
 
     \section{Графы}
-    \input{SCC and 2SAT}
-    \input{euler}
-    \input{edge-2-connectivity}
+    \input{algos/SCC and 2SAT/scc and 2sat.tex}
+    \input{algos/euler/euler.tex}
+    \input{algos/edge-2-connectivity/edge-2-connectivity.tex}
+    \input{algos/dcp offline/dcp offline.tex}
 
-    \section{\texttt{xor}, \texttt{and}, \texttt{or}-свёртки}
-    \lstinputlisting{convolutions/convolutions.cpp}
+    \section{Cвёртки}
+    \input{algos/convolutions/convolutions.tex}
+    \input{algos/fft/fft.tex}
 
     \section{Структуры данных}
-    \input{fenwick}
-    \input{segment-tree}
-    \input{ordered-set}
-    \subsection{Convex hull trick}
-    \lstinputlisting{cht.cpp}
-    \subsection{Центроидная декомпозиция}
-    \lstinputlisting{centroids.cpp}
+    \input{algos/segment tree and fenwick/segment tree and fenwick.tex}
+    \input{algos/ordered set/ordered-set.tex}
+    \input{algos/cht/cht.tex}
+    \input{algos/centroids/centroids.tex}
 
     \section{Строковые алгоритмы}
-    \input{prefix-function}
-    \input{z-function}
-    \input{manacher}
-    \input{sufarray}
+    \input{algos/prefix-function/prefix-function.tex}
+    \input{algos/z-function/z-function.tex}
+    \input{algos/manacher/manacher.tex}
+    \input{algos/sufarray/sufarray.tex}
     \subsection{Алгоритм Ахо --- Корасик}
-    \lstinputlisting{aho-corasick.cpp}
+    \input{algos/aho corasick/aho corasick.tex}
     \subsection{Дерево палиндромов}
-    \lstinputlisting{palindromic.cpp}
+    \input{algos/palindromic tree/palindromic tree.tex}
 
     \section{Потоки}
-    \input{dinic}
-    \input{mincost k-flow.tex}
+    \input{algos/dinic/dinic.tex}
+    \input{algos/mincost k-flow/mincost k-flow.tex}
 
-    \section{FFT \& co}
-    \input{fft}
     \section{Геома}
-    \subsection{Касательные}
-    \lstinputlisting{stress/tangents.cpp}
-    \subsection{Примитивы}
-    \lstinputlisting{geomPrim.cpp}
-    \subsection{Точка нестрого внутри выпуклости}
-    \lstinputlisting{inPolygon.cpp}
+    \input{algos/geometry/geometry.tex}
     \section{Разное}
     \input{miscellaneous}
     ...
