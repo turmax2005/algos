@@ -15,18 +15,20 @@ jobs:
       - name: Install LaTeX
         run: |
           sudo apt-get update
-          sudo apt-get install texlive-latex-extra
-          sudo apt-get install texlive-lang-cyrillic
+          sudo apt-get install texlive texlive-latex-extra texlive-lang-cyrillic texlive-science texlive-fonts-extra
+          wget https://people.debian.org/~sgolovan/debian/pool/main/tex/tex-pscyr/tex-pscyr_0.4d~beta9-1_all.deb
+          sudo dpkg -i tex-pscyr_0.4d~beta9-1_all.deb
+
+      - name: Pull latest changes from the remote repository
+        run: git pull --ff-only origin ${{ github.ref_name }}
 
       - name: Compile LaTeX to PDF
         run: |
           pdflatex main.tex
           pdflatex main.tex
+          pdflatex main.tex
           mkdir -p out
           mv main.pdf out/main.pdf
-
-      - name: Pull latest changes from the remote repository
-        run: git pull origin main
 
       - name: Add and commit PDF file
         run: |
