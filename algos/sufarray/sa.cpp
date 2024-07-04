@@ -25,34 +25,81 @@ struct rmq {
   }
 };
 template <typename T>
+vector <int> SA(const T &a) {
+    int m = *max_element(all(a)) + 1, n = a.size();
+    vector <int> sa(n), nsa(n), pre(max(n, m)), x(a.begin(), a.end()), y(n);
+    for (int e : x) pre[e]++;
+    for (int i = 1; i < m; ++i) pre[i] += pre[i - 1];
+    for (int i = 0; i < n; ++i) sa[--pre[x[i]]]=i;
+    int dif = 1;
+    y[sa.front()]=0;
+    for (int i = 1; i < n; ++i) {
+        dif += x[sa[i]]!=x[sa[i-1]];
+        y[sa[i]] = dif - 1;
+    }
+    x = y;
+    for (int h = 1; dif < n; h *= 2) {
+        fill(all(pre), 0);
+        for (int e : x) pre[e]++;
+        for (int i = 1; i < dif; ++i) pre[i] += pre[i - 1];
+        for (int t = n; t--; ) {
+            int i = sa[t];
+            if (i>=h) {
+                nsa[--pre[x[i-h]]]=i-h;
+            }
+            else if (i + 1 != h) {
+                nsa[--pre[x[i-h+n+1]]]=i-h+n+1;
+            }
+        }
+        nsa[--pre[x[n - h]]]=n-h;
+        sa = nsa;
+        auto getr = [&] (int i) {
+            if (i + h < n) {
+                return x[i + h];
+            }
+            else {
+                return x[i + h - n - 1];
+            }
+        };
+        dif = 1;
+        y[sa.front()]=0;
+        for (int i = 1; i < n; ++i) {
+            if (x[sa[i]]!=x[sa[i-1]] || sa[i-1]+h==n) {
+                dif++;
+            }
+            else {
+                dif += getr(sa[i]) != getr(sa[i-1]);
+            }
+            y[sa[i]]=dif-1;
+        }
+        x = y;
+    }
+    return sa;
+}
+
+template <typename T>
 struct suar {
-    vector <int> sa, lcp, rank; rmq t;
-    suar (T s, int lim=256) : t((int)s.size() - 1) { // s must be nonempty, 0 < s[i] < lim!
-        int n = (int)s.size() + 1, k = 0, a, b; s.app(0);
-        vector <int> x(s.begin(), s.end()), y(n), ws(max(n, lim));rank.resize(n);
-        sa = lcp = y, iota(sa.begin(), sa.end(), 0);
-        for (int j = 0, p = 0; p < n; j = max(1ll, j * 2), lim = p) {
-            p = j, iota(y.begin(), y.end(), n - j);
-            for (int i = 0; i < n; i++) if (sa[i] >= j) y[p++] = sa[i] - j;
-            fill(ws.begin(), ws.end(), 0);
-            for (int i = 0; i < n; i++) ws[x[i]]++;
-            for (int i = 1; i < lim; i++) ws[i] += ws[i - 1];
-            for (int i = n; i--; ) sa[--ws[x[y[i]]]] = y[i];
-            swap(x, y), p = 1, x[sa[0]] = 0;
-            for (int i = 1; i < n; i++) a = sa[i - 1], b = sa[i], x[b] = (y[a] == y[b] && y[a + j] == y[b + j]) ? p - 1 : p++;
+    vector <int> sa, lcp, pos; rmq t;
+    suar (const T &a) : t((int)a.size() - 1) {
+        auto sa = SA(a);
+        int n = (int)a.size(), k = 0;
+        lcp.resize(n - 1);
+        pos.resize(n);
+        for (int i = 0; i < n; ++i) pos[sa[i]] = i;
+        for (int i = 0; i < n; ++i) {
+            if (pos[i]+1<n) {
+                int j = sa[pos[i]+1];    
+                while (i+k<n&&j+k<n&&a[i+k]==a[j+k])k++;
+                lcp[pos[i]]=k;
+            }
+            if (k) {
+                k--;
+            }
         }
-        for (int i = 1; i < n; i++) rank[sa[i]] = i;
-        for (int i = 0, j; i < n - 1; lcp[rank[i++]]=k)
-            for (k && k--, j = sa[rank[i] - 1];
-                s[i + k] == s[j + k]; k++);
-        sa.erase(sa.begin()); lcp.erase(lcp.begin()); lcp.erase(lcp.begin());
         t.build(lcp);
-        for (auto &e : rank) {
-            e--;
-        }
     }
     int getLcp(int i, int j) {
-        i = rank[i]; j = rank[j];
+        i = pos[i]; j = pos[j];
         if (j < i) {
           swap(i, j);
         }
