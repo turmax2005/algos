@@ -1,5 +1,5 @@
 #ifdef LOCAL
-int __lg(int x) { return 63 - __builtin_ctzll(x); }
+int __lg(int x) { return 63 - __builtin_clzll(x); }
 #endif
 
 template<typename Data, typename Mod, typename UniteData, typename UniteMod, typename Apply>
