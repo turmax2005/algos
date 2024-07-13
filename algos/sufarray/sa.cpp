@@ -81,7 +81,7 @@ template <typename T>
 struct suar {
     vector <int> sa, lcp, pos; rmq t;
     suar (const T &a) : t((int)a.size() - 1) {
-        auto sa = SA(a);
+        sa = SA(a);
         int n = (int)a.size(), k = 0;
         lcp.resize(n - 1);
         pos.resize(n);
