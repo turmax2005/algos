@@ -1,3 +1,7 @@
+#ifdef LOCAL
+int __lg(int x) { return 63 - __builtin_ctzll(x); }
+#endif
+
 template<typename Data, typename Mod, typename UniteData, typename UniteMod, typename Apply>
 struct MassSegmentTree {
   int h, n;
