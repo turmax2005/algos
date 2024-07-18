@@ -31,3 +31,25 @@ vector<int> euler(vector<vector<pair<int, int>>> g) {  // pair{nxt, idx}
   if (cycle.size() != m) return {};
   return cycle;
 }
+
+vector<pair<int,int> > euler2(vector<vector<pair<int, int>>> g,vector<pair<int,int> > e) {  // pair{nxt, idx}
+    int m=e.size();
+  int n = g.size();
+  // build graph
+  vector<int> used(m), it(n);vector<pair<int,int> > cycle;
+  auto dfs = [&](auto dfs, int cur) -> void {
+    while (true) {
+      while (it[cur] < g[cur].size() && used[g[cur][it[cur]].second]) it[cur]++;
+      if (it[cur] == g[cur].size()) return;
+      auto [nxt, idx] = g[cur][it[cur]];
+      used[idx] = true;
+      dfs(dfs, nxt);
+      cycle.push_back({cur,nxt});
+    }
+  };
+  // for undirected find odd vertex (and count that # of odd is 0 or 2)
+  dfs(dfs, 0);
+  reverse(cycle.begin(), cycle.end());
+  if (cycle.size() != m) return {};
+  return cycle;
+}
