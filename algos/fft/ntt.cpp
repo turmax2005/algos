@@ -1,5 +1,3 @@
-#define int long long
-using namespace std;
 typedef long long ll;
 const int p=998244353;
 int po(int a,int b) {if(b==0) return 1; if(b==1) return a; if(b%2==0) {int u=po(a,b/2);return (u*1LL*u)%p;} else {int u=po(a,b-1);return (a*1LL*u)%p;}}
@@ -41,8 +39,9 @@ template<int M, int K, int G> struct Fft {
       for (int l = n; (l >>= 1) && !((j ^= l) & l); ) {}
     }
   }
-  vector<int> convolution(const vector<int> &a, const vector<int> &b) const {
+  vector<int> convolution(vector<int> a, vector<int> b) const {
     if(a.empty() || b.empty()) return {};
+    for(int& x:a) {x%=p;if(x>=p) x-=p; if(x<0) x+=p;} for(int& x:b) {x%=p;if(x>=p) x-=p; if(x<0) x+=p;}
     const int na = a.size(), nb = b.size();
     int n, invN = 1;
     for (n = 1; n < na + nb - 1; n <<= 1) invN = ((invN & 1) ? (invN + M) : invN) >> 1;
@@ -59,6 +58,7 @@ template<int M, int K, int G> struct Fft {
   }
 };
 Fft<998244353,23,31> muls;
+
 vector<int> form(vector<int> v,int n)
 {
   while(v.size()<n) v.push_back(0);
