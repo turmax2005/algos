@@ -33,5 +33,5 @@ void example () {
   SegmentTree segtree(n, -(long long)1e18,  [](int x, int y) { return max(x, y); });
 
   // sum
-  MassSegmentTree segtree(n, 0LL,  [](int x, int y) { return x + y; });
+  SegmentTree segtree(n, 0LL,  [](int x, int y) { return x + y; });
 }
