@@ -36,3 +36,17 @@ vector <int> manacher_even(const string &s) {
 }
 // abacaba : (0 0 0 0 0 0)
 // abbaa : (0 2 0 1)
+
+
+  auto pal = [&] (int i, int from, int len) {
+    if (len == 0) {
+        return true;
+    }
+    int m = len/2;
+    if (len & 1) {
+        return o[i][from + m] >= m;
+    }
+    else {
+        return e[i][from + m - 1] >= m;
+    }
+};
