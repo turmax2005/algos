@@ -32,3 +32,13 @@ bool line(Point a, Point b, Point c) {
 bool ord(Point a, Point p, Point b) {
     return (p - a)%(p - b)<0;
 }
+
+int hp(Point a) {
+    if (a.y == 0) return a.x >= 0;
+    return a.y > 0;
+}
+
+bool comp(Point a, Point b) {
+    if (hp(a) != hp(b)) return hp(a) < hp(b);
+    return a.x * b.y - a.y * b.x > 0;
+}
