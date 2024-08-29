@@ -22,7 +22,6 @@ auto find = [&](auto find, int cur, int prev, int tot) -> int {
 dfs(dfs, 0, 0);
 auto c = find(find, 0, 0, sz[0]);
 vector<pair<int, int>> stack{{c, 0}};
-int ans = INF;
 while (!stack.empty()) {
     auto [centroid, l] = stack.back();
     stack.pop_back();
