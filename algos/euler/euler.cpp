@@ -1,4 +1,4 @@
-vector<int> euler(vector<vector<pair<int, int>>> g, int src) {  // g[cur][i] = pair{nxt, idx}
+vector<int> euler(vector<vector<pair<int, int>>> g, int m, int src) {  // g[cur][i] = pair{nxt, idx}
   int n = g.size();
   vector<int> used(m), it(n), cycle;
   auto dfs = [&](auto dfs, int cur) -> void {
