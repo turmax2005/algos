@@ -32,13 +32,13 @@ struct MassSegmentTree {
   // is used only for apply
   int length(int i) { return 1 << (h - __lg(i)); }
 
-  // is used only for descent
+  // used only for descent
   int left(int i) {
     int lvl = __lg(i);
     return (i & ((1 << lvl) - 1)) * (1 << (h - lvl));
   }
 
-  // is used only for descent
+  // used only for descent
   int right(int i) {
     int lvl = __lg(i);
     return ((i & ((1 << lvl) - 1)) + 1) * (1 << (h - lvl));

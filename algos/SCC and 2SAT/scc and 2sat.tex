@@ -1,8 +1,9 @@
 \subsection{$\mathcal{SCC}$ и 2-$\mathcal{SAT}$}
 Алгоритм ищет сильносвязные компоненты в графе $g$, если есть путь $i \rightarrow j$, то $scc[i] \le scc[j]$
 
-В случае 2-$\mathcal{SAT}$ рёбра $i \Rightarrow j$ и $(j\oplus1) \Rightarrow (i \oplus 1)$ должны быть добавлены одновременно.
-\lstinputlisting{algos/SCC and 2SAT/SCC and 2SAT.cpp}
+\lstinputlisting{algos/SCC and 2SAT/SCC.cpp}
+Чтобы решать 2-$\mathcal{SAT}$, надо создать граф на $2n$ вершинах, рёбра $i \Rightarrow j$ и $(j\oplus1) \Rightarrow (i \oplus 1)$ должны быть добавлены одновременно.
+После этого если \texttt{scc[2 * i] = scc[2 * i + 1]}, то решения нет; если \texttt{scc[2 * i + 0] < scc[2 * i + 1]}, то присутствует импликация $\neg i \Rightarrow i$, надо назначить $i = $\texttt{true}.
 
 %https://codeforces.com/contest/228/submission/230077013
 %https://judge.yosupo.jp/submission/168750

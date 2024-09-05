@@ -27,6 +27,18 @@ struct SegmentTree {
         return unite(leftRes, rightRes);
     }
 
+      // used only for descent
+      int left(int i) {
+        int lvl = __lg(i);
+        return (i & ((1 << lvl) - 1)) * (1 << (h - lvl));
+      }
+
+      // used only for descent
+      int right(int i) {
+        int lvl = __lg(i);
+        return ((i & ((1 << lvl) - 1)) + 1) * (1 << (h - lvl));
+      }
+
     // l \in [0; n) && ok(get(l, l), l);
     // returns last r: ok(get(l, r), r)
     template<typename C>
