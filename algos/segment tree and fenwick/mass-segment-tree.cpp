@@ -136,7 +136,7 @@ struct MassSegmentTree {
           push(r);
           Data with2;
           with2 = ud(data[2 * r + 1], cur);
-          if (ok(with2, right(2 * r))) {
+          if (ok(with2, right(2 * r + 1))) {
             cur = with2;
             r = 2 * r;
           } else {
