@@ -14,7 +14,7 @@ jobs:
 
       - name: Add hashcodes
         run: |
-          for filename in ./*.cpp; do
+          for filename in $(find . -name '*.cpp'); do
             code=$(cpp -dD -P $filename | tr -d '[:space:]' | md5sum | cut -c-6)
             tail -n 1 $filename | grep -q "//[a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9]" && sed -i '$d' $filename;
             echo "//$code" >> $filename
