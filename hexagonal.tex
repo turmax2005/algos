@@ -1,0 +1,8 @@
+\begin{tikzpicture}[scale=0.7,overlay,yshift=-1200,xshift=-200]
+    \foreach \x in {0,3,...,40} {
+        \foreach \y in {0,1.732,...,50} {
+            \draw[gray] (\x+0.5, \y-0.866) -- (\x,\y) -- (\x+0.5,\y+0.866) -- (\x+1.5,\y+0.866);
+            \draw[gray] (\x+2, \y) -- (\x+1.5,\y+0.866) -- (\x+2,\y+1.732) -- (\x+3,\y+1.732);
+        }
+    }
+\end{tikzpicture}

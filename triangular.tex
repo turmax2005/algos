@@ -1,0 +1,11 @@
+\begin{tikzpicture}[overlay,yshift=-1200,xshift=-200]
+    \foreach \x in {0,1,...,40} {
+        \foreach \y in {0,1.732,...,50} {
+            \draw[gray] (\x,\y) -- (\x+1,\y) -- (\x+0.5,\y+0.866) -- cycle;
+            \draw[gray] (\x,\y) -- (\x+1,\y) -- (\x+0.5,\y-0.866) -- cycle;
+        }
+    }
+    \foreach \y in {0.866,2.599,...,50} {
+        \draw[gray] (0,\y) -- (40,\y);
+    }
+\end{tikzpicture}
