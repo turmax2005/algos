@@ -13,6 +13,7 @@
 \usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{tikz}
 
 \hypersetup{
     colorlinks=true,
@@ -58,12 +59,19 @@
     \tableofcontents
     \newpage
     \input{clion-setup.tex}
+
+
     \section{Теория чисел}
     \input{algos/chinese remainder theorem/chinese-remainder-theorem.tex}
     \input{algos/miller rabin/miller-rabin.tex}
     \input{algos/berlekamp massey/berlekamp-massey.tex}
+
     \subsection{Линейное решето}
     \lstinputlisting{algos/linear-sieve.cpp}
+
+    \subsection{Алгоритм Шенкса}
+    \lstinputlisting{algos/baby-step-giant-step/1.cpp}
+
 
     \section{Графы}
     \input{algos/SCC and 2SAT/scc and 2sat.tex}
@@ -72,9 +80,11 @@
     \input{algos/dcp offline/dcp offline.tex}
     \input{algos/general weighted matching/matching.tex}
 
+
     \section{Cвёртки}
     \input{algos/bit convolutions/bit convolutions.tex}
     \input{algos/fft/fft.tex}
+
 
     \section{Структуры данных}
     \input{algos/segment tree and fenwick/segment tree and fenwick.tex}
@@ -85,15 +95,19 @@
     \input{algos/li-chao/li-chao.tex}
     \input{algos/min-kinetic-segment-tree/kst.tex}
 
+
     \section{Строковые алгоритмы}
     \input{algos/prefix-function/prefix-function.tex}
     \input{algos/z-function/z-function.tex}
     \input{algos/manacher/manacher.tex}
     \input{algos/sufarray/sufarray.tex}
+
     \subsection{Алгоритм Ахо --- Корасик}
     \input{algos/aho corasick/aho corasick.tex}
+
     \subsection{Дерево палиндромов}
     \input{algos/palindromic tree/palindromic tree.tex}
+
 
     \section{Потоки}
     \input{algos/dinic/dinic.tex}
@@ -101,15 +115,33 @@
 
     \input{algos/hamiltonian/hamiltonian.tex}
 
+
     \section{Геома}
     \input{algos/geometry/geometry.tex}
     \input{algos/continued fractions/cf.tex}
+
+
     \section{Разное}
     \input{miscellaneous}
-
-%    \clearpage
-%    \includegraphics{hexagonal.ps}
-%    \clearpage
-%    \includegraphics{triangle.ps}
-%    \clearpage
+    \onecolumn
+    \begin{tikzpicture}[overlay,yshift=-1200,xshift=-200]
+        \foreach \x in {0,1,...,40} {
+            \foreach \y in {0,1.732,...,50} {
+                \draw[gray] (\x,\y) -- (\x+1,\y) -- (\x+0.5,\y+0.866) -- cycle;
+                \draw[gray] (\x,\y) -- (\x+1,\y) -- (\x+0.5,\y-0.866) -- cycle;
+            }
+        }
+        \foreach \y in {0.866,2.599,...,50} {
+            \draw[gray] (0,\y) -- (40,\y);
+        }
+    \end{tikzpicture}
+    \newpage
+    \begin{tikzpicture}[scale=0.7,overlay,yshift=-1200,xshift=-200]
+        \foreach \x in {0,3,...,40} {
+            \foreach \y in {0,1.732,...,50} {
+                \draw[gray] (\x+0.5, \y-0.866) -- (\x,\y) -- (\x+0.5,\y+0.866) -- (\x+1.5,\y+0.866);
+                \draw[gray] (\x+2, \y) -- (\x+1.5,\y+0.866) -- (\x+2,\y+1.732) -- (\x+3,\y+1.732);
+            }
+        }
+    \end{tikzpicture}
 \end{document}

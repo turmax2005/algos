@@ -6,7 +6,7 @@ template<int M, int K, int G> struct Fft {
   // 1, 1/4, 1/8, 3/8, 1/16, 5/16, 3/16, 7/16, ...
   int g[1 << (K - 1)];
   Fft() : g() { //if tl constexpr...
-    static_assert(K >= 2, "Fft: K >= 2 must hold");
+    // static_assert(K >= 2, "Fft: K >= 2 must hold");
     g[0] = 1;
     g[1 << (K - 2)] = G;
     for (int l = 1 << (K - 2); l >= 2; l >>= 1) {
