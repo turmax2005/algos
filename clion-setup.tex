@@ -12,8 +12,10 @@ $ for c in {A..Z}; do cp main.cpp $c.cpp && echo "add_executable($c $c.cpp)" >> 
 \end{enumerate}
 Далее отключаем подсветку и форматирование в настройках (ctrl+alt+S)
 \begin{itemize}
-    \item Editor $\to$ Inlay Hints $\to$ отключаем всё (достаточно первых трёх --- code vision, parameter names, types).
     \item Editor $\to$ Code Style $\to$ Formatter $\to$ \texttt{Do not format} прописать \texttt{*}
     \item Editor $\to$ Inspections $\to$ C/C++ $\to$ static analysis tools $\to$ CLang-Tidy отключить
+    \item Editor $\to$ Inlay Hints $\to$ отключаем всё (достаточно первых трёх --- code vision, parameter names, types).
 \end{itemize}
-Чтобы добавить санитайзеры, надо дописать в CMakeLists.txt \texttt{set(CMAKE\_CXX\_FLAGS "-fsanitize=address -fsanitize=undefined")}
+Тёмная тема отключается в Appearance \& Behavior $\to$ Appearance.
+
+Чтобы добавить санитайзеры, надо дописать в CMakeLists.txt \texttt{set(CMAKE\_CXX\_FLAGS \texttt{\char`\"}-fsanitize=address -fsanitize=undefined\texttt{\char`\"})}
