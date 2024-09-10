@@ -16,3 +16,4 @@ $ for c in {A..Z}; do cp main.cpp $c.cpp && echo "add_executable($c $c.cpp)" >> 
     \item Editor $\to$ Code Style $\to$ Formatter $\to$ \texttt{Do not format} прописать \texttt{*}
     \item Editor $\to$ Inspections $\to$ C/C++ $\to$ static analysis tools $\to$ CLang-Tidy отключить
 \end{itemize}
+Чтобы добавить санитайзеры, надо дописать в CMakeLists.txt \texttt{set(CMAKE\_CXX\_FLAGS "-fsanitize=address -fsanitize=undefined")}
