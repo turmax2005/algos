@@ -1,6 +1,6 @@
 namespace blossom {
 #define d(x) (lab[x.u] + lab[x.v] - 2 * e[x.u][x.v].w)
-    const int N = 403 * 2;
+    const int N = 403*2;
     const int inf = 1e18;
     struct Q{ int u, v, w; } e[N][N];
     vector<int> p[N];
