@@ -18,4 +18,6 @@ using namespace std;
 
 int32_t main() {
     cin.tie(0);ios_base::sync_with_stdio(0);
+    int n = 2; vector<int> a(n, n);
+    debug(n); debugv(a);
 }

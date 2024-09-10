@@ -1,4 +1,3 @@
-// https://acm.math.spbu.ru/~sk1/algo/memory.cpp.html
 const int MAX_MEM = 1e8;
 int mpos = 0;
 char mem[MAX_MEM];

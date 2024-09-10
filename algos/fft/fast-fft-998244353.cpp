@@ -1,10 +1,3 @@
-/*
-* Solution based on https://codeforces.com/blog/entry/117947
-* Iterative and in-place version.
-* Uses signed montgomery
-* Optimized to minimize memory usage
-*/
-
 const int MOD = 998244353;
 const long long MOD2 = (long long) MOD * MOD;
 const int root = 3;

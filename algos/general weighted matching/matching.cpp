@@ -1,5 +1,3 @@
-// https://judge.yosupo.jp/submission/201334
-
 namespace blossom {
 #define d(x) (lab[x.u] + lab[x.v] - 2 * e[x.u][x.v].w)
     const int N = 403 * 2;

@@ -1,0 +1,18 @@
+\section{Настройка CLion}
+\begin{enumerate}
+    \item В файле \texttt{CMakeLists.txt} дописать строчку \texttt{add\_compile\_definitions(LOCAL)}.
+    Нажать появившуюся опцию в правом верхнем углу \texttt{enable auto-reload}.
+    \item Вбить шаблон в \texttt{main.cpp}:
+    \lstinputlisting{template.cpp}
+    Скомпилировать, чтобы проверить отсутствие опечаток.
+    \item Запустить терминал (crtl + alt + T)
+    \begin{lstlisting}
+$ cd workspace/CLionProjects
+$ for c in {A..Z}; do cp main.cpp $c.cpp && echo "add_executable($c $c.cpp)" >> CMakeLists.txt; done\end{lstlisting}
+\end{enumerate}
+Далее отключаем подсветку и форматирование в настройках (ctrl+alt+S)
+\begin{itemize}
+    \item Editor $\to$ Inlay Hints $\to$ отключаем всё (достаточно первых трёх --- code vision, parameter names, types).
+    \item Editor $\to$ Code Style $\to$ Formatter $\to$ \texttt{Do not format} прописать \texttt{*}
+    \item Editor $\to$ Inspections $\to$ C/C++ $\to$ static analysis tools $\to$ CLang-Tidy отключить
+\end{itemize}

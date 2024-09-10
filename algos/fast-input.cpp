@@ -1,4 +1,3 @@
-// https://acm.math.spbu.ru/~sk1/algo/input-output/fread_write.cpp.html
 const int buf_size = 4096;
 
 int getChar() {

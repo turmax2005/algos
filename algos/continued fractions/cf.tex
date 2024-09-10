@@ -1,4 +1,8 @@
 \section{Цепные дроби}
-// https://cp-algorithms.com/algebra/continued-fractions.html
+\underline{\url{https://cp-algorithms.com/algebra/continued-fractions.html}}
 \subsection{Поиск нижней огибающей, сумма и минимум по модулю}
 \lstinputlisting{algos/continued fractions/cf.cpp}
+\subsection{Простая рекурсия}
+Число точек $(x, y) : 0 \leqslant x < n, 0 < y \leqslant (kx + b) / d$.
+То есть $\sum\limits_{x=0}^{n-1} \lfloor\frac{kx+b}{d}\rfloor$.
+\lstinputlisting{algos/continued fractions/recursion.cpp}
