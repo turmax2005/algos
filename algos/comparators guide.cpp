@@ -14,7 +14,7 @@ int32_t main() {
     for (int x : s3) cout << x << ' '; cout << '\n';
 
     vector<int> v{3, 2, 1};
-    cout << lower_bound(all(v), 2, cmp1) - v.begin() << '\n';
-    cout << lower_bound(all(v), 2, cmp2()) - v.begin() << '\n';
-    cout << lower_bound(all(v), 2, cmp3) - v.begin() << '\n';
+    cout << lower_bound(all(v), 2, cmp1) - v.begin();
+    cout << lower_bound(all(v),2,cmp2()) - v.begin();
+    cout << lower_bound(all(v), 2, cmp3) - v.begin();
 }

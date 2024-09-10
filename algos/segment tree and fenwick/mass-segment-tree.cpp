@@ -1,6 +1,7 @@
-#ifdef LOCAL
-int __lg(int x) { return 63 - __builtin_clzll(x); }
-#endif
+
+//#ifdef LOCAL
+//int __lg(int x) { return 63 - __builtin_clzll(x); }
+//#endif
 
 template<typename Data, typename Mod, typename UniteData, typename UniteMod, typename Apply>
 struct MassSegmentTree {
@@ -15,12 +16,12 @@ struct MassSegmentTree {
   Apply a; // Data (Data, Mod, int); last argument is the length of current segment (could be used for range += and sum counting, for instance)
 
   template<typename I>
-  MassSegmentTree(int sz, Data zd, Mod zm, UniteData ud, UniteMod um, Apply a, I init) : h(__lg(sz > 1 ? sz - 1 : 1) + 1), n(1 << h), zm(zm), zd(zd), data(2 * n, zd), mod(n, zm), ud(ud), um(um), a(a) {
+  MassSegmentTree(int sz, Data zd, Mod zm, UniteData ud, UniteMod um, Apply a, I init) : h(__lg(sz) + 1), n(1 << h), zm(zm), zd(zd), data(2 * n, zd), mod(n, zm), ud(ud), um(um), a(a) {
     for (int i = 0; i < sz; ++i) data[i + n] = init(i);
     for (int i = n - 1; i > 0; --i) data[i] = ud(data[2 * i], data[2 * i + 1]);
   }
 
-  MassSegmentTree(int sz, Data zd, Mod zm, UniteData ud, UniteMod um, Apply a) : h(__lg(sz > 1 ? sz - 1 : 1) + 1), n(1 << h), zm(zm), zd(zd), data(2 * n, zd), mod(n, zm), ud(ud), um(um), a(a) {}
+  MassSegmentTree(int sz, Data zd, Mod zm, UniteData ud, UniteMod um, Apply a) : h(__lg(sz) + 1), n(1 << h), zm(zm), zd(zd), data(2 * n, zd), mod(n, zm), ud(ud), um(um), a(a) {}
 
   void push(int i) {
     if (mod[i] == zm) return;
@@ -149,23 +150,3 @@ struct MassSegmentTree {
     return 0;
   }
 };
-
-void example () {
-  // max and +=
-  MassSegmentTree segtree(n, 0LL, 0LL,
-  [](int x, int y) { return max(x, y); },
-  [](int x, int y) { return x + y; },
-  [](int x, int y, int len) { return x + y; });
-
-  // sum and +=
-  MassSegmentTree segtree(n, 0LL, 0LL,
-  [](int x, int y) { return x + y; },
-  [](int x, int y) { return x + y; },
-  [](int x, int y, int len) { return x + y * len; });
-
-  // sum and assignment
-  MassSegmentTree segtree(n, 0LL, -1LL,
-  [](int x, int y) { return x + y; },
-  [](int x, int y) { return y; },
-  [](int x, int y, int len) { return y * len; });
-}
