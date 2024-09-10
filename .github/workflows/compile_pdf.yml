@@ -16,6 +16,7 @@ jobs:
         run: |
           find . -name '*.cpp' | while IFS= read -r filename; do
             code=$(cpp -dD -P "$filename" | tr -d '[:space:]' | md5sum | cut -c-6)
+            tail -c 1 "$filename" | grep -q "\n" || echo "" >> "$filename" 
             tail -n 1 "$filename" | grep -q "//[a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9]" && sed -i '$d' "$filename"
             echo "//$code" >> "$filename"
           done
