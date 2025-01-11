@@ -25,7 +25,7 @@ struct ModInt {
         return value;
     }
 
-    ModInt power(int exp) const {
+    ModInt power(long long exp) const {
         if (exp == 0) return 1;
         ModInt res = (exp & 1 ? value : 1);
         ModInt half = power(exp >> 1);
