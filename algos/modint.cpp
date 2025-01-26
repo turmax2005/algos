@@ -6,7 +6,7 @@ struct ModInt {
 
     ModInt(long long v) : value(v % MOD) { if (value < 0) value += MOD; }
 
-    ModInt(int32_t v) : value(v < 0 ? MOD + v : v) {}
+    ModInt(int32_t v): value(v % MOD) { if (value < 0) value += MOD; }
 
     ModInt operator+=(ModInt m) {
         value += m.value;
