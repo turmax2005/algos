@@ -1,7 +1,10 @@
 name: compile_pdf
 
 on:
-  push:
+  push:  push:
+    branches: [ "main" ]
+  pull_request:
+
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
@@ -38,7 +41,7 @@ jobs:
           pdflatex main.tex
           pdflatex main.tex
           mkdir -p out
-          mv main.pdf out/main.pdf
+          mv main.pdf out/Polar Bear Transform Teambook.pdf
 
       - name: Add and commit PDF file
         run: |
