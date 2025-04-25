@@ -41,7 +41,7 @@ jobs:
           pdflatex main.tex
           pdflatex main.tex
           mkdir -p out
-          mv main.pdf out/Polar Bear Transform Teambook.pdf
+          mv main.pdf "out/Polar Bear Transform Teambook.pdf"
 
       - name: Add and commit PDF file
         run: |
