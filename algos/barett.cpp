@@ -8,7 +8,7 @@ struct barrett{
     u64 q = (u128(m) * x) >> 64, r = x - q * p;
     return r - p * (r >= p);
   }
-} BA;
+} ba;
 
 // Usage example:
 void solve() {
