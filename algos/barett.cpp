@@ -13,7 +13,7 @@ struct barrett{
 // Usage example:
 void solve() {
   int p = ...;
-  ba = barett(p);
+  ba = barrett(p);
   int x = ..., y = ...;
   int prod = ba.reduce(x * y);
 }
