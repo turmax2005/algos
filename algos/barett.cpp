@@ -4,7 +4,7 @@ struct barrett{
   u64 p, m;
   barrett() {}
   barrett(u64 p) : p(p), m(-1ULL / p) {}
-  u32 reduce(u64 x) {
+  int reduce(u64 x) {
     u64 q = (u128(m) * x) >> 64, r = x - q * p;
     return r - p * (r >= p);
   }
