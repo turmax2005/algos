@@ -15,7 +15,7 @@ vector<int> find_scc(vector<vector<int>> g) {
   };
   for (int i = 0; i < n; ++i) if (!used[i]) dfs(dfs, i);
   vector<int> ind(n);
-  iota(ind.begin(), ind.end(), 0);
+  iota(all(ind), 0);
   sort(all(ind), [&](int i, int j){return tout[i] > tout[j];});
   vector<int> scc(n, -1);
   auto go = [&](auto go, int cur, int color) -> void {
