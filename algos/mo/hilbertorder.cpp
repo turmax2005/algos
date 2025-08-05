@@ -1,4 +1,4 @@
-const int logn = 30; // any number, such that maxn is greater than coordinates.
+const int logn = 30; // any number, such that maxn is greater than coordinates. 20 is ok.
 const int maxn = 1 << logn;
 int hilbertorder(int x, int y) { // returns long long
     int d = 0; // long long
