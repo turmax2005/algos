@@ -17,6 +17,10 @@ int hilbertorder(int x, int y) { // returns long long
     return d;
 }
 // Usage example:
-void sort(vector<pair<int, int>> &qs) {
-    sort(all(qs), [&](int i, int j) { return hilbertorder(i) < hilbertorder(j); });
+vector<int> sort_indices(int q, vector<pair<int, int>> &qs) {
+    vector<int> ind(q), ord(q);
+    iota(all(ind), 0);
+    for (int i = 0; i < q; ++i) ord[i] = hilbertorder(qs[i].first, qs[i].second);
+    sort(all(ind), [&](int i, int j) { return ord[i] < ord[j]; });
+    return ind;
 }
