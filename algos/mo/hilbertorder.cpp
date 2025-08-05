@@ -16,3 +16,7 @@ int hilbertorder(int x, int y) { // returns long long
     }
     return d;
 }
+// Usage example:
+void sort(vector<pair<int, int>> &qs) {
+    sort(all(qs), [&](int i, int j) { return hilbertorder(i) < hilbertorder(j); });
+}
