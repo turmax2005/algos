@@ -1,6 +1,6 @@
-vector<vector<int> > gaussbasis(vector<vector<int> > A) ///returns basis of Av=0
+vector<vector<int> > gaussbasis(vector<vector<int> > A,int m) ///returns basis of Av=0
 {
-    int n=A.size();int m=A[0].size();
+    int n=A.size();if(n) assert(m==A[0].size());
     for(int i=0;i<n;++i) {for(int &x:A[i]) {x%=p;x+=p;x%=p;}}
     int bi=0;
     for(int i=0;i<n;++i)
