@@ -1,4 +1,4 @@
-    //n - number of vertices, m - number of edges, parallel edges -- ???, color of any edge is the color of its lower end
+//n - number of vertices, m - number of edges, parallel edges -- ???, color of any edge is the color of its lower end
 vector <vector <int> > dfstree(n);
 vector <int> used(n), cut(n), h(n), up(n);
 auto findCutPoints = [&] (auto self, int u) -> void {
