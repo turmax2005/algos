@@ -16,6 +16,7 @@ vector<int> manacher(const string &s, int even) {
   }
   return man;
 }
+
 // abacaba : odd : (0 1 0 3 0 1 0); even : (0 0 0 0 0 0 0)
 // abbaa : odd : (0 0 0 0 0); even : (0 0 2 0 1)
 bool pal(int from, int len) {
