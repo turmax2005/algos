@@ -30,3 +30,4 @@ auto lowertinf = [&](Point p) { //lower tangent line parallel to vector p
   auto cmp = [&] (int i, int j) { return a[i] % p > a[j] % p; };
   return max(cmp);
 };
+

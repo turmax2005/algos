@@ -42,3 +42,4 @@ bool comp(Point a, Point b) {
   if (hp(a) != hp(b)) return hp(a) < hp(b);
   return a.x * b.y - a.y * b.x > 0;
 }
+

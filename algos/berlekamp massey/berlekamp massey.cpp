@@ -24,3 +24,4 @@ vector<T> berlekampMassey(const vector<T> &s) {
     x = -x;
   return c;
 }
+

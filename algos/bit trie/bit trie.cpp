@@ -115,3 +115,4 @@ struct binarytrie{
   T order_of_key(Bit x,Bit xor_val=0)const{return count(x,xor_val);}
 };
 binarytrie<32>bt;
+

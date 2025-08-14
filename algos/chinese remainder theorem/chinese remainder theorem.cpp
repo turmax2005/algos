@@ -10,3 +10,4 @@ int inv(int r, int m) {
   return (x+m)%m;
 }
 int crt(int r, int n, int c, int m) { return r + ((c - r) % m + m) * inv(n, m) % m * n; }
+

@@ -21,4 +21,4 @@ int32_t main() {
   int n = 2; vector<int> a(n, n);
   debug(n); debugv(a);
 }
-//qwerty
+

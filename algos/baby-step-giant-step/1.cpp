@@ -157,3 +157,4 @@ int shanks2(int x,int y,int mod1) ///only for T=long long, 0^0 = 1 by default
     return (-1);
   }
 }
+

@@ -53,3 +53,4 @@ vertex *add(vertex *v, int x, int cnt) {
   }
   return merge(l, merge(m, r));
 }
+

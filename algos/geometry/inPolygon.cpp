@@ -15,3 +15,4 @@ auto inP = [&] (Point p) { //a must be in counterclockwise order!
   }
   return inT(a[l], a[0], a[r], p);
 };
+

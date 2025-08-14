@@ -6,3 +6,4 @@ int cnt (int n, int k, int b, int d)
   }
   return cnt((k * n + b) / d, d, (k * n + b) % d, k);
 }
+

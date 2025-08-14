@@ -24,3 +24,4 @@ vector<pt> convex(vector<pt> a) {
   }
   return h; // h is circular: h.front() == h.back()
 }
+

@@ -67,3 +67,4 @@ struct DcpOffline {
 
   DcpOffline(int maxt) : n(2 << __lg(maxt + 1)), d(2 * n) {}
 };
+

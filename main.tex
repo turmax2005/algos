@@ -1,5 +1,9 @@
-\documentclass[a4paper,twocolumn,8pt]{extarticle}
+\documentclass[a4paper,twocolumn]{extarticle}
 
+\usepackage{lmodern}
+\usepackage{anyfontsize}
+%\renewcommand{\normalsize}{\fontsize{7pt}{8.4pt}\selectfont}
+\usepackage{setspace}
 \usepackage{pscyr}
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
@@ -53,6 +57,7 @@
 \setlength{\columnsep}{30pt}
 
 \begin{document}
+{\fontsize{7pt}{8.4pt}\selectfont
     \pagestyle{fancy}
     \fancyhead[LO]{St. Petersburg State University (Ushakov, Turevskii, Danilevich)}
     \fancyhead[R]{Page \thepage~of~\pageref{LastPage}}
@@ -134,4 +139,5 @@
     %\input{triangular.tex}
     %\newpage
     %\input{hexagonal.tex}
+}
 \end{document}

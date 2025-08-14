@@ -48,3 +48,4 @@ void solve() {
         cout << "test passed" << endl;
     }
 }
+

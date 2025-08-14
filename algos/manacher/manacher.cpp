@@ -50,3 +50,4 @@ vector <int> manacher_even(const string &s) {
         return e[i][from + m - 1] >= m;
     }
 };
+

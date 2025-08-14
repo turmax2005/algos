@@ -40,3 +40,4 @@ int get(int x) {
   return in(lines[pos],x);
 }
 };
+
