@@ -39,5 +39,4 @@ void solve() {
     for (int i = 0; i < m; ++i) {
         p = intersect(p, [&](point pt) { return cross(q[i + 1] - q[i], pt - q[i]); });
     }
-
 }

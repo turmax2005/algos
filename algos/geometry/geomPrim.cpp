@@ -27,7 +27,7 @@ struct Point {
   }
 };
 bool line(Point a, Point b, Point c) {
-  return (b-a)*(c-b)==0;
+  return (b - a) * (c - b)==0;
 }
 bool ord(Point a, Point p, Point b) {
   return (p - a)%(p - b)<0;
