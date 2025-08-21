@@ -77,6 +77,5 @@ vector <ld> b(m), c(n)
 LPSolver solver(A, b, c);
 vector <ld> x;
 ld value = solver.solve(x);
-// OUTPUT: value of the optimal solution (infinity if unbounded
-//         above, -inf if infeasible)
+// OUTPUT: value of the optimal solution (infinity if unbounded above, -infinity if infeasible)
 */
