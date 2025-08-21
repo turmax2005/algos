@@ -1,18 +1,23 @@
 mt19937 rng(0);
 
 struct vertex {
-  int heap = rng(), val;
-  int sz = 1, cnt = 1;
+  int heap = rng(), val, rnd = rng();
+  int sz = 1, sum;
   vertex *lf = nullptr, *rg = nullptr;
 
-  vertex(int x, int cnt) : val(x), cnt(cnt), sz(cnt) {}
+  vertex(int x) : val(x), sum(x) {}
 
   friend int get_sz(vertex *v) {
     return v ? v->sz : 0;
   }
 
+  friend int get_sum(vertex *v) {
+    return v ? v->sum : 0;
+  }
+
   vertex *update() {
-    sz = get_sz(lf) + cnt + get_sz(rg);
+    sz = get_sz(lf) + 1 + get_sz(rg);
+    sum = get_sum(lf) + val + get_sum(rg);
     return this;
   }
 };
@@ -29,60 +34,63 @@ vertex *merge(vertex *l, vertex *r) {
   }
 }
 
-pair<vertex *, vertex *> split(vertex *v, int x) {
+pair<vertex *, vertex *> split(vertex *v, int x, int rnd) {
   if (!v) return {v, v};
-  if (v->val < x) {
-    auto [lf, rg] = split(v->rg, x);
+  if (pair{v->val, v->rnd} < pair{x, rnd}) {
+    auto [lf, rg] = split(v->rg, x, rnd);
     v->rg = lf;
     return {v->update(), rg};
   } else {
-    auto [lf, rg] = split(v->lf, x);
+    auto [lf, rg] = split(v->lf, x, rnd);
     v->lf = rg;
     return {lf, v->update()};
   }
 }
 
-vertex *add(vertex *v, int x, int cnt) {
-  auto [l, mr] = split(v, x);
-  auto [m, r] = split(mr, x + 1);
-  if (m == nullptr) {
-    m = new vertex(x, cnt);
-  } else {
-    m->cnt += cnt;
-    if (m->cnt == 0) m = nullptr; else m->update();
-  }
-  return merge(l, merge(m, r));
-}
-
-vertex *insert(vertex *a, vertex *b) {
-    if (!a) return b;
+void insert(vertex *&a, vertex *b) {
+    if (!a) {
+        a = b;
+        return;
+    }
     if (a->heap > b->heap) {
-        if (a->val < b->val) {
-            a->rg = insert(a->rg, b);
-            return a->update();
+        if (pair{a->val, a->rnd} < pair{b->val, b->rnd}) {
+            insert(a->rg, b);
         } else {
-            a->lf = insert(a->lf, b);
-            return a->update();
+            insert(a->lf, b);
         }
+        a->update();
     } else {
-        auto [lf, rg] = splitkey(a, b->val, b->rnd);
+        auto [lf, rg] = split(a, b->val, b->rnd);
         b->lf = lf;
         b->rg = rg;
-        return b->update();
+        a = b->update();
     }
 }
 
-vertex *join(vertex *a, vertex *b) {
+void join(vertex *&a, vertex *b) {
     auto dfs = [&](auto dfs, vertex *b) -> void {
         if (!b) return;
         vertex *lf = b->lf;
         vertex *rg = b->rg;
         b->lf =  b->rg = nullptr;
         b = b->update();
-        a = insert(a, b);
+        insert(a, b);
         dfs(dfs, lf);
         dfs(dfs, rg);
     };
     dfs(dfs, b);
-    return a;
+}
+
+pair <vertex*, vertex*> split_sz(vertex *v, int k) {
+    if (!v) return {v, v};
+    if (k <= get_sz(v->lf)) {
+        auto [l, r] = split_sz(v->lf, k);
+        v->lf = r;
+        return {l, v->update()};
+    }
+    else {
+        auto [l, r] = split_sz(v->rg, k - get_sz(v->lf) - 1);
+        v->rg = l;
+        return {v->update(), r};
+    }
 }
