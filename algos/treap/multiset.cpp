@@ -54,3 +54,35 @@ vertex *add(vertex *v, int x, int cnt) {
   return merge(l, merge(m, r));
 }
 
+vertex *insert(vertex *a, vertex *b) {
+    if (!a) return b;
+    if (a->heap > b->heap) {
+        if (a->val < b->val) {
+            a->rg = insert(a->rg, b);
+            return a->update();
+        } else {
+            a->lf = insert(a->lf, b);
+            return a->update();
+        }
+    } else {
+        auto [lf, rg] = splitkey(a, b->val, b->rnd);
+        b->lf = lf;
+        b->rg = rg;
+        return b->update();
+    }
+}
+
+vertex *join(vertex *a, vertex *b) {
+    auto dfs = [&](auto dfs, vertex *b) -> void {
+        if (!b) return;
+        vertex *lf = b->lf;
+        vertex *rg = b->rg;
+        b->lf =  b->rg = nullptr;
+        b = b->update();
+        a = insert(a, b);
+        dfs(dfs, lf);
+        dfs(dfs, rg);
+    };
+    dfs(dfs, b);
+    return a;
+}
