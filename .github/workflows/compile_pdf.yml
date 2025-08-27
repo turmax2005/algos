@@ -45,8 +45,7 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
-          git add "out/Polar Bear Transform Teambook.pdf"
-          git commit -m "add auto-compile pdf"
+          git commit -a -m "add auto-compile pdf"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
