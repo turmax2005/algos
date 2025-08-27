@@ -1,96 +1,99 @@
 mt19937 rng(0);
 
+using ptr = int32_t;
+
 struct vertex {
-  int heap = rng(), val, rnd = rng();
-  int sz = 1, sum;
-  vertex *lf = nullptr, *rg = nullptr;
+    ptr lf = 0, rg = 0;
+    int32_t heap = rng(), rnd = rng(), sz = 1;
+    int val, sum = 0;
 
-  vertex(int x) : val(x), sum(x) {}
-
-  friend int get_sz(vertex *v) {
-    return v ? v->sz : 0;
-  }
-
-  friend int get_sum(vertex *v) {
-    return v ? v->sum : 0;
-  }
-
-  vertex *update() {
-    sz = get_sz(lf) + 1 + get_sz(rg);
-    sum = get_sum(lf) + val + get_sum(rg);
-    return this;
-  }
+    vertex(int x = 0) : val(x), sum(x) {}
 };
 
-vertex *merge(vertex *l, vertex *r) {
-  if (!l) return r;
-  if (!r) return l;
-  if (l->heap < r->heap) {
-    r->lf = merge(l, r->lf);
-    return r->update();
-  } else {
-    l->rg = merge(l->rg, r);
-    return l->update();
-  }
+vector <vertex> mem;
+
+ptr new_vertex(int x) {
+    mem.app(vertex(x));
+    return (int)mem.size()-1;
 }
 
-pair<vertex *, vertex *> split(vertex *v, int x, int rnd) {
-  if (!v) return {v, v};
-  if (pair{v->val, v->rnd} < pair{x, rnd}) {
-    auto [lf, rg] = split(v->rg, x, rnd);
-    v->rg = lf;
-    return {v->update(), rg};
-  } else {
-    auto [lf, rg] = split(v->lf, x, rnd);
-    v->lf = rg;
-    return {lf, v->update()};
-  }
+ptr update(ptr v) {
+    mem[v].sz = mem[mem[v].lf].sz + 1 + mem[mem[v].rg].sz;
+    mem[v].sum = mem[mem[v].lf].sum + mem[v].val + mem[mem[v].rg].sum;
+    return v;
 }
 
-void insert(vertex *&a, vertex *b) {
+ptr merge(ptr l, ptr r) {
+    if (!l || !r) return l ^ r;
+    if (mem[l].heap > mem[r].heap) {
+        mem[l].rg = merge(mem[l].rg, r);
+        return update(l);
+    } else {
+        mem[r].lf = merge(l, mem[r].lf);
+        return update(r);
+    }
+}
+
+pair<ptr, ptr> splitkey(ptr v, int x, int32_t rnd) {
+    if (!v) return {v, v};
+    if (pair{mem[v].val, mem[v].rnd} < pair{x, rnd}) {
+        auto [lf, rg] = splitkey(mem[v].rg, x, rnd);
+        mem[v].rg = lf;
+        return {update(v), rg};
+    } else {
+        auto [lf, rg] = splitkey(mem[v].lf, x, rnd);
+        mem[v].lf = rg;
+        return {lf, update(v)};
+    }
+}
+
+void insert(ptr &a, ptr b) {
     if (!a) {
         a = b;
         return;
     }
-    if (a->heap > b->heap) {
-        if (pair{a->val, a->rnd} < pair{b->val, b->rnd}) {
-            insert(a->rg, b);
+    if (mem[a].heap > mem[b].heap) {
+        if (pair{mem[a].val, mem[a].rnd} < pair{mem[b].val, mem[b].rnd}) {
+            insert(mem[a].rg, b);
         } else {
-            insert(a->lf, b);
+            insert(mem[a].lf, b);
         }
-        a->update();
+        update(a);
     } else {
-        auto [lf, rg] = split(a, b->val, b->rnd);
-        b->lf = lf;
-        b->rg = rg;
-        a = b->update();
+        auto [lf, rg] = splitkey(a, mem[b].val, mem[b].rnd);
+        mem[b].lf = lf;
+        mem[b].rg = rg;
+        a = update(b);
     }
 }
 
-void join(vertex *&a, vertex *b) {
-    auto dfs = [&](auto dfs, vertex *b) -> void {
+void join(ptr &a, ptr b) {
+    auto dfs = [&](auto dfs, ptr b) -> void {
         if (!b) return;
-        vertex *lf = b->lf;
-        vertex *rg = b->rg;
-        b->lf =  b->rg = nullptr;
-        b = b->update();
-        insert(a, b);
+        ptr lf = mem[b].lf;
+        ptr rg = mem[b].rg;
+        mem[b].lf = mem[b].rg = 0;
+        insert(a, update(b));
         dfs(dfs, lf);
         dfs(dfs, rg);
     };
     dfs(dfs, b);
 }
 
-pair <vertex*, vertex*> split_sz(vertex *v, int k) {
+pair <ptr, ptr> splitsz(ptr v, int k) {
     if (!v) return {v, v};
-    if (k <= get_sz(v->lf)) {
-        auto [l, r] = split_sz(v->lf, k);
-        v->lf = r;
-        return {l, v->update()};
+    if (k <= mem[mem[v].lf].sz) {
+        auto [l, r] = splitsz(mem[v].lf, k);
+        mem[v].lf = r;
+        return {l, update(v)};
+    } else {
+        auto [l, r] = splitsz(mem[v].rg, k - mem[mem[v].lf].sz - 1);
+        mem[v].rg = l;
+        return {update(v), r};
     }
-    else {
-        auto [l, r] = split_sz(v->rg, k - get_sz(v->lf) - 1);
-        v->rg = l;
-        return {v->update(), r};
-    }
+}
+
+int32_t main() {
+    mem = {vertex()};
+    mem[0].sz = 0;
 }
