@@ -20,6 +20,7 @@ jobs:
             tail -c 1 "$filename" | grep -q "\n" || echo >> "$filename" 
             code=$(cpp -dD -P -fpreprocessed "$filename" | tr -d '[:space:]' | md5sum | cut -c-6)
             echo "//$code" >> "$filename"
+            echo "$code --- $filename" 
           done
 
       - name: Install LaTeX
