@@ -138,4 +138,5 @@ struct MassSegmentTree {
         return 0;
     }
 };
+
 //fc0cde

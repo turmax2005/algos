@@ -40,4 +40,5 @@ void solve() {
         p = intersect(p, [&](point pt) { return cross(q[i + 1] - q[i], pt - q[i]); });
     }
 }
+
 //bd15f0
