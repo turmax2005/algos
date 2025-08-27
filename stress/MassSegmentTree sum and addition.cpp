@@ -219,5 +219,4 @@ void solve() {
         cout << "test passed" << endl;
     }
 }
-
 //0473fc

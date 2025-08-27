@@ -48,5 +48,4 @@ void solve() {
         cout << "test passed" << endl;
     }
 }
-
 //266d70

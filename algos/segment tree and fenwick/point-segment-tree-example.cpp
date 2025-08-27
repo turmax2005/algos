@@ -12,5 +12,4 @@ void example () {
     return ones.lastTrue(l + 1, [l](int sum, int r){ return r - (l + 1) == sum; });
   };
 }
-
 //32749e

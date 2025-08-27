@@ -19,5 +19,4 @@ auto inP = [&] (Point p) {
   }
   return inT(a[l], a[0], a[r], p);
 };
-
 //9e04bc

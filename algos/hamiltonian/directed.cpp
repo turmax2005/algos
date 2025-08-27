@@ -90,5 +90,4 @@ namespace hamil {
     return vi();
   }
 }
-
 //43ae60

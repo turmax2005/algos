@@ -40,5 +40,4 @@ vector<int> hungarian(int n, int m, vector<vector<int>> a, int &cost) { //1-inde
   cost = -v[0];
   return ans;
 }
-
 //6d564b

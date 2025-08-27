@@ -16,5 +16,4 @@ vector<int> euler(vector<vector<pair<int, int>>> g, int m, int src) {  // g[cur]
   if (cycle.size() != m) return {}; // check that all edges are present in the cycle, fail otherwise
   return cycle;
 }
-
 //f6b9d4

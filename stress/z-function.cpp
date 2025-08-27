@@ -54,5 +54,4 @@ void solve() {
         cout << "test passed" << endl;
     }
 }
-
 //56232e

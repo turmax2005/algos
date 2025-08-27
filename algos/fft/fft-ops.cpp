@@ -60,5 +60,4 @@ vector<int> inv1(vector<int> v,int n)
   }
   return form(a,n);
 }
-
 //12aa4e

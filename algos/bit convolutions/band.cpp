@@ -9,5 +9,4 @@ vector<int> band(vector<int> a,vector<int> b)
   for(int i=0;i<n;++i) for(int mask=0;mask<(1<<n);++mask) if(!(mask & (1<<i))) {c[mask]-=c[mask+(1<<i)];c[mask]%=p;}
   return c;
 }
-
 //807ee0

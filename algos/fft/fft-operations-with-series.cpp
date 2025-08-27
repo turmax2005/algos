@@ -410,5 +410,4 @@ vector<int> interpolate(const vector<int> &x, const vector<int> &y) {
 }
 using namespace faq;
 using namespace faq::ntt;
-
 //2ccd87

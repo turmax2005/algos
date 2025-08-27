@@ -53,5 +53,4 @@ vector<int> multiply(vector<int> const& a, vector<int> const& b) {
   while(!result.empty() && !result.back()) result.pop_back();
   return result;
 }
-
 //35d9d0

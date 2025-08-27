@@ -105,5 +105,4 @@ namespace hamil {
     return vi();
   }
 }
-
 //c35638

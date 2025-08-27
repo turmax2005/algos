@@ -19,5 +19,4 @@ vector<point> convex(vector<point> a) {
   }
   return h; // h is circular: h.empty() || h.front() == h.back()
 }
-
 //ef9132

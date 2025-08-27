@@ -79,5 +79,4 @@ vector <ld> x;
 ld value = solver.solve(x);
 // OUTPUT: value of the optimal solution (infinity if unbounded above, -infinity if infeasible)
 */
-
 //31e155

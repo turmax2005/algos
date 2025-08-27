@@ -90,5 +90,4 @@ struct SegmentTree {
     return 0;
   }
 };
-
 //64190d

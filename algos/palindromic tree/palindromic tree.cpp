@@ -65,5 +65,4 @@ struct palindromic{
     return dp.back();
   }
 };
-
 //acac02

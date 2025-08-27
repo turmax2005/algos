@@ -36,5 +36,4 @@ bool on(const Q &e) {
   }
   return 0;
 }
-
 //3f0f1d

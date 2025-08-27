@@ -7,5 +7,4 @@ inline void * operator new (size_t n) {
 }
 void operator delete (void *) noexcept { }
 void operator delete (void *, size_t) noexcept { }
-
 //8726b1

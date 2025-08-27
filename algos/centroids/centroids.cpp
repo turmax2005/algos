@@ -33,5 +33,4 @@ while (!stack.empty()) {
     stack.push_back({new_centroid, lvl[centroid] + 1});
   }
 }
-
 //0e1e52

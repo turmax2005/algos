@@ -100,5 +100,4 @@ int get_min(int a, int b, int c, int n) {
   for (auto [x, y] : ch) mn = min(mn, (a * x + b) % c);
   return mn;
 }
-
 //87941e

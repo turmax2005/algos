@@ -30,5 +30,4 @@ vector<int> find_scc(vector<vector<int>> g) {
   }
   return scc;
 }
-
 //4fd51f

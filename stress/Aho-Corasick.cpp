@@ -95,5 +95,4 @@ void solve() {
         cout << endl;
     }
 }
-
 //eba8e2

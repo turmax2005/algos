@@ -7,5 +7,4 @@ int main() {
     cin >> a >> b;
     cout << a + b << '\n';
 }
-
 //36794a

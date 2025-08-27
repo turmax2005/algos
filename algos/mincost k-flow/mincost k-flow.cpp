@@ -118,5 +118,4 @@ for (int flow = 0; flow < k; ++flow) {
   for (int x : p) cout << x + 1 << ' ';
   cout << '\n';
 }
-
 //94b9cb

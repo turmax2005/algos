@@ -101,5 +101,4 @@ class mcmf {
     return make_pair(flow, cost);
   }
 };
-
 //b7bbb2

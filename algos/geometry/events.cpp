@@ -39,5 +39,4 @@ double solve(vector<point> a, point p, point q) {
   }
   return ans * dist(pq);
 }
-
 //fe0649

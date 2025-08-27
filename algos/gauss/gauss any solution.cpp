@@ -54,5 +54,4 @@ optional<vector<int> > gauss(vector<vector<int> > A,vector<int> b) ///returns v 
     }
     return v;
 }
-
 //bcc622

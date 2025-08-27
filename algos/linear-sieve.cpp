@@ -9,5 +9,4 @@ for (int i = 2; i < C; ++i) {
     lp[pr[j] * i] = pr[j];
   }
 }
-
 //36b3d1

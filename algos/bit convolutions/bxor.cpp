@@ -10,5 +10,4 @@ vector<int> bxor(vector<int> a,vector<int> b)
   for(int i=0;i<n;++i) for(int mask=0;mask<(1<<n);++mask) if(!(mask & (1<<i))) {int u=c[mask],v=c[mask+(1<<i)];c[mask+(1<<i)]=((v-u)*inv2)%p;c[mask]=((u+v)*inv2)%p;}
   return c;
 }
-
 //20cc50

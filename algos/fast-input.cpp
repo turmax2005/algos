@@ -25,5 +25,4 @@ int readInt() {
     x = x * 10 + c - '0', c = getChar();
   return s * x;
 }
-
 //dc0a77
