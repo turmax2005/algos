@@ -10,3 +10,4 @@ vector<int> band(vector<int> a,vector<int> b)
   return c;
 }
 
+//807ee0

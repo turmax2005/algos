@@ -62,3 +62,5 @@ vector<vector<int> > gaussbasis(vector<vector<int> > A,int m) ///returns basis o
     }
     return v;
 }
+
+//ef40f3

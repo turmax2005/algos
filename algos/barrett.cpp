@@ -17,3 +17,5 @@ void solve() {
   int x = ..., y = ...;
   int prod = ba.reduce(x * y);
 }
+
+//a8b4c7

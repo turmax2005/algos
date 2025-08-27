@@ -11,3 +11,4 @@ vector<int> z_function (string s) { // z[i] - lcp of s and s[i:]
   return z;
 }
 
+//48cccd

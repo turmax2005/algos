@@ -24,3 +24,5 @@ vector<int> sort_indices(int q, vector<pair<int, int>> &qs) {
     sort(all(ind), [&](int i, int j) { return ord[i] < ord[j]; });
     return ind;
 }
+
+//134578

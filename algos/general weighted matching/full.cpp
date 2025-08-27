@@ -117,3 +117,5 @@ pair<int, vector<array<int, 2>>> run(int N, vector<array<int, 3>> edges) {
   for (int i = 1; i <= n; ++i) if (i < lk[i]) weight += e[i][lk[i]].w, matching.push_back({i - 1, lk[i] - 1});
   return {weight, matching};
 }
+
+//8410fc

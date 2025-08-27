@@ -25,3 +25,4 @@ vector<T> berlekampMassey(const vector<T> &s) {
   return c;
 }
 
+//ff47ae

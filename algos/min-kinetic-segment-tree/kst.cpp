@@ -127,3 +127,4 @@ struct kst { // min kinetic segment tree
   }
 };
 
+//66f9a9

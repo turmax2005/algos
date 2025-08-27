@@ -18,3 +18,4 @@ void example () {
   [](int x, int y, int len) { return y * len; });
 }
 
+//294d25

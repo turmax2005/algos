@@ -15,3 +15,5 @@ double read_double() {
     if (p10 < 0.5) p10 = 1;
     return sgn * num / p10;
 }
+
+//b77b67

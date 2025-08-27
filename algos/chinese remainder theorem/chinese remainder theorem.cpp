@@ -11,3 +11,4 @@ int inv(int r, int m) {
 }
 int crt(int r, int n, int c, int m) { return r + ((c - r) % m + m) * inv(n, m) % m * n; }
 
+//8ed8ed

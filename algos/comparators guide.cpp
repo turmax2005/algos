@@ -19,3 +19,4 @@ int32_t main() {
     cout << lower_bound(all(v), 2, cmp3) - v.begin();
 }
 
+//adea08

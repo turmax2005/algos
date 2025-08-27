@@ -10,3 +10,4 @@ vector<int> bor(vector<int> a,vector<int> b)
   return c;
 }
 
+//07707e

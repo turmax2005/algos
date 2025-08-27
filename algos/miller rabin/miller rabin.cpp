@@ -24,3 +24,4 @@ bool chprime(int n) ///miller-rabin
   return true;
 }
 
+//86b2ed

@@ -31,3 +31,5 @@ bool pal(int from, int len) {
         return even[from + m] >= m;
     }
 }
+
+//8a64d6
