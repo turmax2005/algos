@@ -12,6 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install texlive texlive-latex-extra texlive-lang-cyrillic texlive-science texlive-fonts-extra
+          wget https://people.debian.org/~sgolovan/debian/pool/main/tex/tex-pscyr/tex-pscyr_0.4d~beta9-1_all.deb
+          sudo dpkg -i tex-pscyr_0.4d~beta9-1_all.deb
+
+      - name: Pull latest changes from the remote repository
+        run: git pull --ff-only origin ${{ github.ref_name }}
+
       - name: Add hashcodes
         run: |
           find . -name '*.cpp' | while IFS= read -r filename; do
@@ -22,16 +32,6 @@ jobs:
             echo "//$code" >> "$filename"
             echo "$code --- $filename" 
           done
-
-      - name: Install LaTeX
-        run: |
-          sudo apt-get update
-          sudo apt-get install texlive texlive-latex-extra texlive-lang-cyrillic texlive-science texlive-fonts-extra
-          wget https://people.debian.org/~sgolovan/debian/pool/main/tex/tex-pscyr/tex-pscyr_0.4d~beta9-1_all.deb
-          sudo dpkg -i tex-pscyr_0.4d~beta9-1_all.deb
-
-      - name: Pull latest changes from the remote repository
-        run: git pull --ff-only origin ${{ github.ref_name }}
 
       - name: Compile LaTeX to PDF
         run: |
