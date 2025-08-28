@@ -79,4 +79,4 @@ pair<int, vector<int>> solve(int n, vector<edge> ed, bool recover) {
   for (int i = 1; i < n; ++i) go(get(i));
   return {ans, take};
 }
-//f245b7
+//14d619
