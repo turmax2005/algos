@@ -58,20 +58,20 @@ pair<int, vector<int>> solve(int n, vector<edge> ed, bool recover) {
       color[x] = 2;
     }
     if (recover) {
-      pq<pair<int, int>, greater<>> dijkstra;
+      pq<pair<int, int>, greater<>> d;
       for (auto [x, i] : stack) {
-        dijkstra.emplace(x, i);
+        d.emplace(x, i);
       }
-      while (!dijkstra.empty()) {
-        auto [t, i] = dijkstra.top();
-        dijkstra.pop();
+      while (!d.empty()) {
+        auto [t, i] = d.top();
+        d.pop();
         if (color[ed[i][1]] == 3) {
           continue;
         }
         color[ed[i][1]] = 3;
         take.push_back(i);
         for (auto [t2, i2] : g[ed[i][1]]) {
-          dijkstra.emplace(t2, i2);
+          d.emplace(t2, i2);
         }
       }
     }
