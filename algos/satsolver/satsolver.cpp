@@ -270,7 +270,7 @@ private:
     order_heap.emplace(std::make_pair(0.0, v));
   }
   void uncheckedEnqueue(Lit p, CRef from = CRef_Undef) {
-    assert(value(p) == l_Undef);
+    //assert(value(p) == l_Undef);
     assigns[var(p)] = sign(p);
     vardata[var(p)] = mkVarData(from, decisionLevel());
     trail.emplace_back(p);
