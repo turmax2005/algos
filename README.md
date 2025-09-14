@@ -1,1 +1,1 @@
-Here is current version of the Polar Bear Transform teambook. ![example workflow](https://github.com/No-Idle/teambook/actions/workflows/example_test.yml/badge.svg) ![judge yosupo verification](https://github.com/No-Idle/teambook/actions/workflows/verify.yml/badge.svg)
+Mostly copied from Polar Bear Transform teambook. ![example workflow](https://github.com/No-Idle/teambook/actions/workflows/example_test.yml/badge.svg) ![judge yosupo verification](https://github.com/No-Idle/teambook/actions/workflows/verify.yml/badge.svg)
