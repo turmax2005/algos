@@ -78,3 +78,9 @@ template<int32_t MOD, typename R>bool operator!=(ModInt<MOD> a, R b) { return a.
 using mint = ModInt<998244353>;
 //using mint = ModInt<(int32_t)(1e9 + 7)>;
 //237c16
+const int maxn=2e6+5;
+mint fact[maxn];mint invf[maxn];
+void init() {
+    fact[0]=1;for(int i=1;i<maxn;++i) {fact[i]=(fact[i-1]*i);}
+    invf[maxn-1]=((mint) (1))/fact[maxn-1];for(int i=maxn-2;i>=0;--i) invf[i]=(invf[i+1]*(i+1));
+}
