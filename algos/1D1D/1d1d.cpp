@@ -1,5 +1,6 @@
 /// w(a,c)+w(b,d)<=w(a,d)+w(b,c) for a<=b<=c<=d 
 /// https://codeforces.com/blog/entry/93772 by seiko.iwasawa
+/// dp(i) = min(j<i : dp(j)+w(j,i)), dp(0) = 0
 auto w = [&](int j, int i) { return b[j] * 1LL * a[i]; };
 dp[0] = 0;
 deque<pair<int, int>> k = {{0, 1}};
