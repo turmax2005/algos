@@ -1,3 +1,5 @@
+/// https://codeforces.com/blog/entry/130566
+/// by PROG666
 using lll = __int128;
 using ulll = unsigned __int128;
 
