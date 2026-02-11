@@ -4,7 +4,7 @@ using namespace std;
 ///suffix tree of adamant
 #define fpos adla
 const int inf = 1e9;
-const int maxn = 1e6;
+const int maxn = 1e6 + 555;
 char s[maxn];
 map<int, int> to[maxn];
 int len[maxn], fpos[maxn], link[maxn];
