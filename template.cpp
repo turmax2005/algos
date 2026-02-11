@@ -88,6 +88,10 @@ void init() {
     fact[0]=1;for(int i=1;i<maxn;++i) {fact[i]=(fact[i-1]*i);}
     invf[maxn-1]=((mint) (1))/fact[maxn-1];for(int i=maxn-2;i>=0;--i) invf[i]=(invf[i+1]*(i+1));
 }
+mint C(int n,int k) {
+    if(n<0 || k<0 || n<k) return 0;
+    return fact[n]*invf[k]*invf[n-k];
+}
 mt19937 rnd;
 #define app push_back
 #define all(x) (x).begin(),(x).end()
@@ -106,6 +110,7 @@ mt19937 rnd;
 #define minpos(a) min_element(all(a))-a.begin()
 #define maxa(a) *max_element(all(a))
 #define mina(a) *min_element(all(a))
+const int inf=1e18;
 pair<int,vector<int> > read()
 {
     int n;cin>>n;vector<int> a(n);for(int &x:a) {cin>>x;} return {n,a};
