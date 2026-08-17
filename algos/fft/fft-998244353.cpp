@@ -59,3 +59,10 @@ template<int M, int K, int G> struct Fft {
 };
 Fft<998244353,23,31> muls;
 //a1b591
+vector<mint> operator*(vector<mint> a,vector<mint> b) {
+    vector<int> a1(a.size());for(int i=0;i<a.size();++i) a1[i]=a[i].value;
+    vector<int> b1(b.size());for(int i=0;i<b.size();++i) b1[i]=b[i].value;
+    vector<int> c1=muls.convolution(a1,b1);
+    vector<mint> c(c1.size());for(int i=0;i<c1.size();++i) c[i]=c1[i];
+    return c;
+}
