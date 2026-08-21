@@ -70,7 +70,7 @@ public:
 };
 
 }
-std::vector<int> MinPlusConvolution_AIsConcave(std::vector<int> A, std::vector<int> B){ ///A must be concave, B is arbitrary
+std::vector<int> MinPlusConvolution_AIsConcave(std::vector<int> A, std::vector<int> B){ ///A must be concave, B is arbitrary, A_i<=10^9, B_i<=10^9
     using namespace std;
     int N = (int)A.size();
     int M = (int)B.size();
