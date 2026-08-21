@@ -1,4 +1,4 @@
-namespace nachia{ ///copied from Nachia
+namespace nachia{ ///copied from Nachia, https://judge.yosupo.jp/submission/261406
 
 template<class Func, class Eval>
 struct LiChaoTreeFlexible{
