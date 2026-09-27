@@ -323,3 +323,4 @@ namespace NT{
         return ret;
     }
 }
+/// auto v = NT::factorize(x);
